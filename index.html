@@ -49,11 +49,40 @@
             colors: {
               "bwa-primary": "#2447f9",
               "bwa-secondary": "#22c58b",
-              "bwa-dark": "#121829",
-              "bwa-light": "#f8f9fb",
+              "bwa-dark": "#34364a",
+              "bwa-light": "#f6f8fd",
             },
             fontFamily: {
               poppins: ["Poppins", "sans-serif"],
+            },
+            animation: {
+              "fade-in-up": "fadeInUp 0.6s ease-out",
+              "fade-in": "fadeIn 0.6s ease-out",
+              move: "move 15s ease-in infinite",
+              "move-down": "move-down 15s ease-in infinite",
+            },
+            keyframes: {
+              fadeInUp: {
+                from: { opacity: "0", transform: "translateY(30px)" },
+                to: { opacity: "1", transform: "translateY(0)" },
+              },
+              fadeIn: {
+                from: { opacity: "0" },
+                to: { opacity: "1" },
+              },
+              move: {
+                "0%": { top: "70px" },
+                "50%": { top: "-55px" },
+                "100%": { top: "70px" },
+              },
+              "move-down": {
+                "0%": { bottom: "70px" },
+                "50%": { bottom: "-55px" },
+                "100%": { bottom: "70px" },
+              },
+            },
+            spacing: {
+              25: "100px",
             },
           },
         },
@@ -73,7 +102,7 @@
         padding: 12px 24px;
         border-radius: 50px;
         font-weight: 600;
-        transition: all 0.4s;
+        transition: all 0.15s ease-in-out;
         border: none;
         text-decoration: none;
         display: inline-flex;
@@ -84,19 +113,18 @@
       .btn-bwa-primary:hover {
         background: #2447f9;
         color: white;
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(36, 71, 249, 0.3);
+        box-shadow: 0 0 0 0.25rem rgba(36, 71, 249, 0.25);
       }
 
       .btn-bwa-secondary {
         background: #e5e9f2;
         color: #34364a;
-        font-size: 16px;
+        font-size: 1rem;
         padding: 12px 24px;
         border-radius: 100px;
         border: 0;
         font-weight: 600;
-        transition: all 0.4s;
+        transition: all 0.15s ease-in-out;
         line-height: 24px;
         text-decoration: none;
         display: inline-flex;
@@ -105,12 +133,9 @@
       }
 
       .btn-bwa-secondary:hover {
-        box-shadow: 10px 12px 20px #e7ebf5;
         background: #e5e9f2;
         color: #34364a;
-        border: 0;
-        transition: all 0.4s;
-        transform: translateY(-2px);
+        box-shadow: 10px 12px 20px #e7ebf5;
       }
 
       /* Badge BWA */
@@ -120,7 +145,7 @@
         padding: 8px 22px;
         border-radius: 99px;
         font-weight: 600;
-        font-size: 14px;
+        font-size: 0.875rem;
       }
 
       /* Text Gradient */
@@ -133,7 +158,7 @@
 
       /* Hover Effects */
       .hover-lift {
-        transition: all 0.4s ease;
+        transition: all 0.15s ease-in-out;
       }
 
       .hover-lift:hover {
@@ -147,7 +172,7 @@
         -webkit-backdrop-filter: blur(20px);
         background: rgba(255, 255, 255, 0.9);
         border-bottom: 1px solid rgba(36, 71, 249, 0.08);
-        transition: all 0.4s ease;
+        transition: all 0.15s ease-in-out;
       }
 
       .nav-transparent {
@@ -157,12 +182,432 @@
         -webkit-backdrop-filter: none;
       }
 
+      /* Typography Scale - BuildWithAngga Style */
+      .text-hero {
+        font-size: 46px;
+        font-weight: 700;
+        line-height: 1.2;
+        color: #34364a;
+      }
+
+      .text-section-title {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 1.3;
+        color: #34364a;
+      }
+
+      .text-card-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #34364a;
+      }
+
+      .text-stats {
+        font-size: 46px;
+        font-weight: 700;
+      }
+
       /* Hero Label like BuildWithAngga */
       .hero-label {
         font-weight: 500;
-        font-size: 18px;
+        font-size: 1.125rem;
         line-height: 27px;
         color: #47bb8e;
+      }
+
+      /* Keyframe Animations - BuildWithAngga Style */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .animate-fade-in-up {
+        animation: fadeInUp 0.6s ease-out;
+      }
+
+      .animate-fade-in {
+        animation: fadeIn 0.6s ease-out;
+      }
+
+      /* BuildWithAngga Course Card Styling */
+      .course-card-responsive {
+        padding: 0 !important;
+        border-radius: 16px;
+        row-gap: 0;
+        height: 100%;
+        min-height: 360px;
+        position: relative;
+        border: none;
+        background: #fff;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        color: #34364a;
+        box-shadow: none;
+        transition: all 0.15s ease-in-out;
+      }
+
+      .course-card-responsive:hover {
+        box-shadow: none;
+        transform: none;
+      }
+
+      .course-card-responsive .thumbnailContainer {
+        width: 100%;
+        height: auto;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .course-card-responsive .thumbnail-course {
+        min-height: 190px;
+        max-height: 190px;
+        width: 100%;
+        border-radius: 16px 16px 0 0;
+        object-fit: cover;
+        transition: all 0.15s ease-in-out;
+      }
+
+      .course-card-responsive .thumbnailContainer .play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) translateY(20px);
+        width: 40px;
+        height: 40px;
+        background: #2447f9;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: all 0.15s ease-in-out;
+        cursor: pointer;
+        z-index: 10;
+      }
+
+      .course-card-responsive:hover .thumbnailContainer .play-button {
+        opacity: 1;
+        transform: translate(-50%, -50%) translateY(0);
+      }
+
+      .course-card-responsive .thumbnailContainer .play-button svg {
+        width: 20px;
+        height: 20px;
+        fill: white;
+        margin-left: 2px;
+      }
+
+      /* Testimonial Section V3 Styles */
+      #testimonial-section-v3 {
+        background-color: #181230;
+        overflow: hidden;
+        margin: 50px 0 100px;
+        height: auto;
+        padding: 50px 0;
+      }
+
+      @media (min-width: 992px) {
+        #testimonial-section-v3 {
+          height: 600px;
+        }
+      }
+
+      #testimonial-section-v3 .header-title {
+        margin-top: 10px;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 48px !important;
+      }
+
+      #testimonial-section-v3 .subtitle {
+        margin-top: 10px;
+        color: #a9a4bc;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 32px;
+      }
+
+      #testimonial-section-v3 .testimonial-column {
+        position: relative;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        overflow-y: scroll;
+        width: 300px;
+        max-width: 300px;
+      }
+
+      #testimonial-section-v3 .testimonial-column::-webkit-scrollbar {
+        display: none;
+      }
+
+      #testimonial-section-v3 .testimonial-column:first-child {
+        animation: move 15s ease-in infinite;
+        top: 50px;
+        position: relative;
+      }
+
+      #testimonial-section-v3 .testimonial-column:last-child {
+        animation: move-down 15s ease-in infinite;
+        bottom: 50px;
+        margin-left: 30px;
+        position: relative;
+      }
+
+      .testimonial-columns-wrapper {
+        display: flex;
+        gap: 0;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      #testimonial-section-v3 .testimonial-card {
+        width: 300px;
+        background: #fff;
+        border-radius: 16px;
+        padding: 20px;
+      }
+
+      #testimonial-section-v3 .testimonial-card > * {
+        text-align: left !important;
+      }
+
+      #testimonial-section-v3 .testimonial-card:not(:last-child) {
+        margin-bottom: 30px;
+      }
+
+      #testimonial-section-v3 .testimonial-title {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 27px;
+        color: #34364a;
+      }
+
+      #testimonial-section-v3 .testimonial-description {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #34364a;
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+
+      #testimonial-section-v3 .testimonial-profile {
+        width: 36px;
+        height: 36px;
+        margin-right: 10px;
+        border-radius: 50%;
+      }
+
+      #testimonial-section-v3 .testimonial-author {
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 18px;
+        color: #34364a;
+      }
+
+      #testimonial-section-v3 .testimonial-role {
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 18px;
+        color: #999aa4;
+      }
+
+      @keyframes move {
+        0% {
+          top: 70px;
+        }
+        50% {
+          top: -55px;
+        }
+        to {
+          top: 70px;
+        }
+      }
+
+      @keyframes move-down {
+        0% {
+          bottom: 70px;
+        }
+        50% {
+          bottom: -55px;
+        }
+        to {
+          bottom: 70px;
+        }
+      }
+
+      #testimonial-section-v3 {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 27px;
+        color: #a6aebe;
+      }
+
+      @media screen and (max-width: 576px) {
+        #testimonial-section-v3 {
+          padding-block: 30px !important;
+          margin-bottom: 0 !important;
+        }
+        #testimonial-section-v3 .header-title {
+          font-size: 24px !important;
+          margin-top: 4px !important;
+        }
+        #testimonial-section-v3 .hero-label {
+          font-size: 14px !important;
+        }
+      }
+
+      /* Footer ND Styles */
+      .footer-nd {
+        position: relative;
+        z-index: 10;
+        background-color: #f6f8fd;
+        margin-top: 100px;
+        padding-top: 80px;
+      }
+      .footer-nd .container {
+        max-width: 1200px;
+      }
+      .footer-nd p,
+      .footer-nd p a {
+        color: #34364a;
+      }
+      .footer-nd p a:hover {
+        color: #2447f9;
+      }
+      .footer-nd .tagline {
+        line-height: 21px;
+        font-size: 16px;
+        max-width: 216px;
+      }
+      .footer-nd .item-footer {
+        margin-bottom: 50px;
+      }
+      .footer-nd .item-footer .header-category {
+        font-weight: 700;
+        font-size: 16px;
+        margin-bottom: 7px;
+      }
+      .footer-nd .item-footer .text {
+        margin: 0;
+      }
+      .footer-nd .item-footer ul {
+        margin-left: -32px;
+        padding-left: 32px;
+      }
+      .footer-nd .item-footer ul li {
+        padding-bottom: 7px;
+        list-style: none;
+      }
+      .footer-nd .item-footer ul li a {
+        text-decoration: none;
+        color: #34364a;
+        font-size: 16px;
+      }
+      .footer-nd .item-footer ul li a:hover {
+        color: #2447f9;
+      }
+      .footer-nd .container {
+        padding-right: 40px;
+        padding-left: 40px;
+      }
+
+      @media (max-width: 767px) {
+        .footer-nd {
+          margin-top: 0;
+        }
+        .footer-nd .item-footer {
+          margin-bottom: 30px;
+        }
+      }
+
+      .course-card-responsive .course-detail {
+        padding: 16px 16px 0 16px;
+        margin-bottom: 20px;
+        flex-grow: 1;
+      }
+
+      .course-card-responsive .course-detail .course-name {
+        color: #34364a;
+        position: relative;
+        font-weight: 700 !important;
+        font-size: 18px !important;
+        line-height: 27px;
+        min-height: 55px;
+        margin-bottom: 12px;
+      }
+
+      .course-card-responsive .course-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 4px;
+        padding: 0 16px 16px 16px;
+      }
+
+      .course-card-responsive .course-price-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .course-card-responsive .disc-price {
+        font-size: 20px;
+        font-weight: 700;
+        color: #34364a;
+      }
+
+      .course-card-responsive .origin-price {
+        color: #999aa4;
+        text-decoration: line-through;
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      .course-card-responsive .course-footer .star-rating {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      .course-card-responsive .course-footer .star-rating img {
+        width: 20px;
+        height: 20px;
+      }
+
+      .course-card-responsive .course-footer .star-rating span {
+        font-size: 14px;
+        font-weight: 500;
+        color: #34364a;
+        margin-left: 2px;
+      }
+
+      .course-card-responsive .course-footer .icon-level {
+        position: relative;
+        z-index: 10;
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
       }
     </style>
   </head>
@@ -230,9 +675,7 @@
         <div class="flex justify-between items-center">
           <!-- Logo -->
           <div class="flex items-center">
-            <span class="text-2xl font-bold" style="color: #34364a"
-              >TechLearn</span
-            >
+            <span class="text-2xl font-bold text-bwa-dark">TechLearn</span>
             <span class="text-gray-500 text-sm ml-2 hidden sm:block"
               >Indonesia</span
             >
@@ -242,20 +685,14 @@
           <div class="hidden lg:flex items-center space-x-8">
             <a
               href="#flash-sale"
-              class="font-medium transition-colors"
-              style="color: #34364a"
-              onmouseover="this.style.color='#2447f9'"
-              onmouseout="this.style.color='#34364a'"
+              class="font-medium transition-colors text-bwa-dark hover:text-bwa-primary"
               >Flash Sale</a
             >
 
             <!-- Courses Dropdown -->
             <div class="relative group">
               <button
-                class="font-medium transition-colors flex items-center"
-                style="color: #34364a"
-                onmouseover="this.style.color='#2447f9'"
-                onmouseout="this.style.color='#34364a'"
+                class="font-medium transition-colors flex items-center text-bwa-dark hover:text-bwa-primary"
               >
                 Kelas
                 <svg
@@ -275,10 +712,10 @@
               <div
                 class="absolute top-full left-0 mt-3 w-80 bg-white rounded-2xl shadow-2xl border-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-4 group-hover:translate-y-0"
               >
-                <div class="p-6">
+                <div class="course-detail">
                   <div class="grid grid-cols-2 gap-6">
                     <div>
-                      <h6 class="font-semibold mb-3" style="color: #34364a">
+                      <h6 class="font-semibold mb-3 text-bwa-dark">
                         Programming
                       </h6>
                       <div class="space-y-2">
@@ -305,9 +742,7 @@
                       </div>
                     </div>
                     <div>
-                      <h6 class="font-semibold mb-3" style="color: #34364a">
-                        Design
-                      </h6>
+                      <h6 class="font-semibold mb-3 text-bwa-dark">Design</h6>
                       <div class="space-y-2">
                         <a
                           href="#"
@@ -333,46 +768,18 @@
                     </div>
                   </div>
                   <hr class="my-4 border-gray-200" />
-                  <a
-                    href="#courses"
-                    class="flex items-center font-medium text-sm transition-colors"
-                    style="color: #2447f9"
-                    onmouseover="this.style.color='#1a3bd1'"
-                    onmouseout="this.style.color='#2447f9'"
-                  >
-                    Lihat Semua Kelas
-                    <svg
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      class="ml-2"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                  </a>
                 </div>
               </div>
             </div>
 
             <a
               href="#about"
-              class="font-medium transition-colors"
-              style="color: #34364a"
-              onmouseover="this.style.color='#2447f9'"
-              onmouseout="this.style.color='#34364a'"
+              class="font-medium transition-colors text-bwa-dark hover:text-bwa-primary"
               >Tentang</a
             >
             <a
               href="#contact"
-              class="font-medium transition-colors"
-              style="color: #34364a"
-              onmouseover="this.style.color='#2447f9'"
-              onmouseout="this.style.color='#34364a'"
+              class="font-medium transition-colors text-bwa-dark hover:text-bwa-primary"
               >Kontak</a
             >
           </div>
@@ -389,8 +796,16 @@
                 ></path>
               </svg>
             </button>
-            <a href="#" class="btn-bwa-secondary">Masuk</a>
-            <a href="#" class="btn-bwa-secondary">Daftar</a>
+            <a
+              href="#"
+              class="bg-gray-200 text-bwa-dark px-6 py-3 rounded-full font-semibold transition-all duration-150 inline-flex items-center justify-center hover:shadow-[10px_12px_20px_#e7ebf5]"
+              >Masuk</a
+            >
+            <a
+              href="#"
+              class="bg-gray-200 text-bwa-dark px-6 py-3 rounded-full font-semibold transition-all duration-150 inline-flex items-center justify-center hover:shadow-[10px_12px_20px_#e7ebf5]"
+              >Daftar</a
+            >
           </div>
 
           <!-- Mobile Menu Button -->
@@ -416,34 +831,22 @@
           <div class="space-y-2 py-4 border-t">
             <a
               href="#flash-sale"
-              class="block py-2 transition-colors"
-              style="color: #34364a"
-              onmouseover="this.style.color='#2447f9'"
-              onmouseout="this.style.color='#34364a'"
+              class="block py-2 transition-colors text-bwa-dark hover:text-bwa-primary"
               >Flash Sale</a
             >
             <a
               href="#courses"
-              class="block py-2 transition-colors"
-              style="color: #34364a"
-              onmouseover="this.style.color='#2447f9'"
-              onmouseout="this.style.color='#34364a'"
+              class="block py-2 transition-colors text-bwa-dark hover:text-bwa-primary"
               >Kelas</a
             >
             <a
               href="#about"
-              class="block py-2 transition-colors"
-              style="color: #34364a"
-              onmouseover="this.style.color='#2447f9'"
-              onmouseout="this.style.color='#34364a'"
+              class="block py-2 transition-colors text-bwa-dark hover:text-bwa-primary"
               >Tentang</a
             >
             <a
               href="#contact"
-              class="block py-2 transition-colors"
-              style="color: #34364a"
-              onmouseover="this.style.color='#2447f9'"
-              onmouseout="this.style.color='#34364a'"
+              class="block py-2 transition-colors text-bwa-dark hover:text-bwa-primary"
               >Kontak</a
             >
             <div class="pt-4 border-t mt-4 space-y-2">
@@ -465,50 +868,46 @@
 
             <!-- Main Heading -->
             <h1
-              class="text-4xl lg:text-6xl font-bold mb-6 leading-tight"
-              style="color: #34364a"
+              class="text-5xl font-bold leading-tight text-bwa-dark mb-6 animate-fade-in-up"
             >
-              Bangun Masa Depan <br />
-              <span style="color: #2447f9">Karir Tech</span> <br />
-              Impianmu Bersama Kami
+              Bangun Karir Tech <br />
+              Impianmu
             </h1>
 
             <!-- Subheading -->
             <p class="text-xl text-gray-600 mb-8 leading-relaxed">
               Bergabunglah dengan ribuan profesional yang telah mengembangkan
-              skill programming dan design bersama mentor expert di
-              BuildWithAngga Indonesia.
+              skill programming dan design bersama mentor expert di TechLearn
+              Indonesia.
             </p>
 
             <!-- CTA Buttons -->
             <div class="flex flex-col sm:flex-row gap-4 mb-8">
               <a href="#courses" class="btn-bwa-primary text-lg">
-                Mulai Belajar Sekarang
+                Mulai Belajar
               </a>
-              <a href="#demo" class="btn-bwa-secondary text-lg">
-                Lihat Demo Kelas
-              </a>
+              <a href="#demo" class="btn-bwa-secondary text-lg"> Demo Kelas </a>
             </div>
 
             <!-- Statistics -->
             <div class="flex items-center space-x-8">
               <div class="text-center">
-                <div class="text-3xl font-bold text-bwa-dark">50K+</div>
+                <div class="text-stats text-bwa-dark">50K+</div>
                 <div class="text-sm text-gray-600">Students</div>
               </div>
               <div class="text-center">
-                <div class="text-3xl font-bold text-bwa-dark">150+</div>
+                <div class="text-stats text-bwa-dark">150+</div>
                 <div class="text-sm text-gray-600">Courses</div>
               </div>
               <div class="text-center">
-                <div class="text-3xl font-bold text-bwa-dark">95%</div>
+                <div class="text-stats text-bwa-dark">95%</div>
                 <div class="text-sm text-gray-600">Success Rate</div>
               </div>
             </div>
           </div>
 
           <div class="lg:pl-8 relative">
-            <div class="relative">
+            <div class="thumbnailContainer">
               <img
                 src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
                 alt="Students learning together"
@@ -570,7 +969,7 @@
                 />
               </svg>
             </div>
-            <div class="text-4xl font-bold text-bwa-dark mb-3">50K+</div>
+            <div class="text-stats text-bwa-dark mb-3">50K+</div>
             <div class="text-gray-600 font-medium">Happy Students</div>
           </div>
 
@@ -590,7 +989,7 @@
                 />
               </svg>
             </div>
-            <div class="text-4xl font-bold text-bwa-dark mb-3">150+</div>
+            <div class="text-stats text-bwa-dark mb-3">150+</div>
             <div class="text-gray-600 font-medium">Expert Courses</div>
           </div>
 
@@ -607,7 +1006,7 @@
                 <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <div class="text-4xl font-bold text-bwa-dark mb-3">95%</div>
+            <div class="text-stats text-bwa-dark mb-3">95%</div>
             <div class="text-gray-600 font-medium">Success Rate</div>
           </div>
 
@@ -626,7 +1025,7 @@
                 />
               </svg>
             </div>
-            <div class="text-4xl font-bold text-bwa-dark mb-3">24/7</div>
+            <div class="text-stats text-bwa-dark mb-3">24/7</div>
             <div class="text-gray-600 font-medium">Support</div>
           </div>
         </div>
@@ -634,12 +1033,13 @@
     </section>
 
     <!-- Featured Courses Section -->
-    <section id="courses" class="py-20" style="background-color: #f8f9fb">
+    <section id="courses" class="py-20 bg-bwa-light">
       <div class="container mx-auto px-4">
         <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold mb-4" style="color: #34364a">
-            Kelas Paling
-            <span style="color: #2447f9">Populer</span>
+          <h2
+            class="text-3xl font-bold leading-relaxed text-bwa-dark mb-4 animate-fade-in-up"
+          >
+            Kelas Paling Populer
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
             Dipilih oleh ribuan students dan telah terbukti efektif untuk
@@ -650,299 +1050,394 @@
         <!-- Courses Grid -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Course Card 1 -->
-          <div
-            class="bg-white rounded-2xl shadow-sm hover-lift overflow-hidden"
-          >
-            <div class="relative">
+          <div class="course-card-responsive bg-white animate-fade-in-up">
+            <div class="thumbnailContainer">
               <img
                 src="https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                 alt="JavaScript Fundamental"
-                class="w-full h-48 object-cover"
+                class="thumbnail-course"
               />
-              <div class="absolute top-4 left-4">
-                <span class="badge-bwa">BESTSELLER</span>
+              <div class="play-button">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
               </div>
             </div>
-            <div class="p-6">
-              <div class="flex items-center mb-3">
-                <span class="badge-bwa mr-2">Programming</span>
-                <span class="text-gray-500 text-sm ml-auto">12 jam</span>
+            <div class="course-detail">
+              <h3 class="course-name">JavaScript Fundamental untuk Pemula</h3>
+              <div class="course-price-wrapper">
+                <span class="disc-price">Rp 99.000</span>
+                <span class="origin-price">Rp 299.000</span>
               </div>
-              <h3 class="text-xl font-bold mb-2" style="color: #34364a">
-                JavaScript Fundamental untuk Pemula
-              </h3>
-              <p class="text-gray-600 mb-4">
-                Pelajari dasar-dasar JavaScript dari nol hingga bisa membuat
-                website interaktif
-              </p>
-              <div class="flex items-center mb-4">
+            </div>
+            <div class="course-footer">
+              <div class="star-rating">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face"
-                  alt="Instructor"
-                  class="w-8 h-8 rounded-full mr-2"
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
                 />
-                <span class="text-sm text-gray-600">Ahmad Rizki</span>
+                <img
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
+                />
+                <img
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
+                />
+                <img
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
+                />
+                <img
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
+                />
+                <span>4.8</span>
               </div>
-              <div class="flex items-center justify-between">
-                <div>
-                  <span class="text-2xl font-bold" style="color: #34364a"
-                    >Rp 99K</span
-                  >
-                  <span class="text-sm text-gray-500 line-through ml-2"
-                    >Rp 299K</span
-                  >
-                </div>
-                <button class="btn-bwa-primary">Daftar</button>
-              </div>
+              <svg
+                class="icon-level"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="12" cy="12" r="10" fill="#22c58b" />
+                <path
+                  d="M8 12L11 15L16 9"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </div>
           </div>
 
           <!-- Course Card 2 -->
-          <div
-            class="bg-white rounded-2xl shadow-sm hover-lift overflow-hidden"
-          >
-            <div class="relative">
+          <div class="course-card-responsive bg-white animate-fade-in-up">
+            <div class="thumbnailContainer">
               <img
                 src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                 alt="UI/UX Design"
-                class="w-full h-48 object-cover"
+                class="thumbnail-course"
               />
-              <div class="absolute top-4 left-4">
-                <span class="badge-bwa">HOT</span>
+              <div class="play-button">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
               </div>
             </div>
-            <div class="p-6">
-              <div class="flex items-center mb-3">
-                <span class="badge-bwa mr-2">UI/UX Design</span>
-                <span class="text-gray-500 text-sm ml-auto">15 jam</span>
+            <div class="course-detail">
+              <h3 class="course-name">Complete UI/UX Design Mastery</h3>
+              <div class="course-price-wrapper">
+                <span class="disc-price">Rp 129.000</span>
+                <span class="origin-price">Rp 399.000</span>
               </div>
-              <h3 class="text-xl font-bold mb-2" style="color: #34364a">
-                Complete UI/UX Design Mastery
-              </h3>
-              <p class="text-gray-600 mb-4">
-                Dari wireframe hingga prototype, kuasai semua skill yang
-                dibutuhkan UI/UX Designer
-              </p>
-              <div class="flex items-center mb-4">
+            </div>
+            <div class="course-footer">
+              <div class="star-rating">
                 <img
-                  src="https://images.unsplash.com/photo-1494790108755-2616b612b17c?w=40&h=40&fit=crop&crop=face"
-                  alt="Instructor"
-                  class="w-8 h-8 rounded-full mr-2"
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
                 />
-                <span class="text-sm text-gray-600">Sarah Putri</span>
+                <img
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
+                />
+                <img
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
+                />
+                <img
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
+                />
+                <img
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
+                />
+                <span>4.9</span>
               </div>
-              <div class="flex items-center justify-between">
-                <div>
-                  <span class="text-2xl font-bold" style="color: #34364a"
-                    >Rp 129K</span
-                  >
-                  <span class="text-sm text-gray-500 line-through ml-2"
-                    >Rp 399K</span
-                  >
-                </div>
-                <button class="btn-bwa-primary">Daftar</button>
-              </div>
+              <svg
+                class="icon-level"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="12" cy="12" r="10" fill="#ffc107" />
+                <path
+                  d="M12 8V12L15 15"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </div>
           </div>
 
           <!-- Course Card 3 -->
-          <div
-            class="bg-white rounded-2xl shadow-sm hover-lift overflow-hidden"
-          >
-            <div class="relative">
+          <div class="course-card-responsive bg-white animate-fade-in-up">
+            <div class="thumbnailContainer">
               <img
                 src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                 alt="React Development"
-                class="w-full h-48 object-cover"
+                class="thumbnail-course"
               />
-              <div class="absolute top-4 left-4">
-                <span class="badge-bwa">NEW</span>
+              <div class="play-button">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
               </div>
             </div>
-            <div class="p-6">
-              <div class="flex items-center mb-3">
-                <span class="badge-bwa mr-2">Programming</span>
-                <span class="text-gray-500 text-sm ml-auto">20 jam</span>
+            <div class="course-detail">
+              <h3 class="course-name">React.js Complete Developer</h3>
+              <div class="course-price-wrapper">
+                <span class="disc-price">Rp 149.000</span>
+                <span class="origin-price">Rp 499.000</span>
               </div>
-              <h3 class="text-xl font-bold mb-2" style="color: #34364a">
-                React.js Complete Developer
-              </h3>
-              <p class="text-gray-600 mb-4">
-                Bangun aplikasi web modern dengan React.js, dari basic hingga
-                advanced level
-              </p>
-              <div class="flex items-center mb-4">
+            </div>
+            <div class="course-footer">
+              <div class="star-rating">
                 <img
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face"
-                  alt="Instructor"
-                  class="w-8 h-8 rounded-full mr-2"
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
                 />
-                <span class="text-sm text-gray-600">Budi Santoso</span>
+                <img
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
+                />
+                <img
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
+                />
+                <img
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
+                />
+                <img
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
+                />
+                <span>4.7</span>
               </div>
-              <div class="flex items-center justify-between">
-                <div>
-                  <span class="text-2xl font-bold" style="color: #34364a"
-                    >Rp 149K</span
-                  >
-                  <span class="text-sm text-gray-500 line-through ml-2"
-                    >Rp 499K</span
-                  >
-                </div>
-                <button class="btn-bwa-primary">Daftar</button>
-              </div>
+              <svg
+                class="icon-level"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="12" cy="12" r="10" fill="#dc3545" />
+                <path
+                  d="M9 12L12 15L18 9"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </div>
           </div>
 
           <!-- Course Card 4 -->
-          <div
-            class="bg-white rounded-2xl shadow-sm hover-lift overflow-hidden"
-          >
-            <div class="relative">
+          <div class="course-card-responsive bg-white animate-fade-in-up">
+            <div class="thumbnailContainer">
               <img
                 src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                 alt="Data Science"
-                class="w-full h-48 object-cover"
+                class="thumbnail-course"
               />
-              <div class="absolute top-4 left-4">
-                <span class="badge-bwa">TRENDING</span>
+              <div class="play-button">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
               </div>
             </div>
-            <div class="p-6">
-              <div class="flex items-center mb-3">
-                <span class="badge-bwa mr-2">Data Science</span>
-                <span class="text-gray-500 text-sm ml-auto">25 jam</span>
+            <div class="course-detail">
+              <h3 class="course-name">Python for Data Science</h3>
+              <div class="course-price-wrapper">
+                <span class="disc-price">Rp 179.000</span>
+                <span class="origin-price">Rp 599.000</span>
               </div>
-              <h3 class="text-xl font-bold mb-2" style="color: #34364a">
-                Python for Data Science
-              </h3>
-              <p class="text-gray-600 mb-4">
-                Analisis data dengan Python, pandas, dan machine learning untuk
-                insight bisnis
-              </p>
-              <div class="flex items-center mb-4">
+            </div>
+            <div class="course-footer">
+              <div class="star-rating">
                 <img
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=40&h=40&fit=crop&crop=face"
-                  alt="Instructor"
-                  class="w-8 h-8 rounded-full mr-2"
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
                 />
-                <span class="text-sm text-gray-600">Dr. Maya Sari</span>
+                <img
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
+                />
+                <img
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
+                />
+                <img
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
+                />
+                <img
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
+                />
+                <span>4.6</span>
               </div>
-              <div class="flex items-center justify-between">
-                <div>
-                  <span class="text-2xl font-bold" style="color: #34364a"
-                    >Rp 179K</span
-                  >
-                  <span class="text-sm text-gray-500 line-through ml-2"
-                    >Rp 599K</span
-                  >
-                </div>
-                <button class="btn-bwa-primary">Daftar</button>
-              </div>
+              <svg
+                class="icon-level"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="12" cy="12" r="10" fill="#ffc107" />
+                <path
+                  d="M12 8V12L15 15"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </div>
           </div>
 
           <!-- Course Card 5 -->
-          <div
-            class="bg-white rounded-2xl shadow-sm hover-lift overflow-hidden"
-          >
-            <div class="relative">
+          <div class="course-card-responsive bg-white animate-fade-in-up">
+            <div class="thumbnailContainer">
               <img
                 src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                 alt="Python Backend"
-                class="w-full h-48 object-cover"
+                class="thumbnail-course"
               />
+              <div class="play-button">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
             </div>
-            <div class="p-6">
-              <div class="flex items-center mb-3">
-                <span class="badge-bwa mr-2">Backend</span>
-                <span class="text-gray-500 text-sm ml-auto">18 jam</span>
+            <div class="course-detail">
+              <h3 class="course-name">Python Backend Development</h3>
+              <div class="course-price-wrapper">
+                <span class="disc-price">Rp 159.000</span>
+                <span class="origin-price">Rp 449.000</span>
               </div>
-              <h3 class="text-xl font-bold mb-2" style="color: #34364a">
-                Python Backend Development
-              </h3>
-              <p class="text-gray-600 mb-4">
-                Buat REST API dengan Django & Flask, database design, dan
-                deployment
-              </p>
-              <div class="flex items-center mb-4">
+            </div>
+            <div class="course-footer">
+              <div class="star-rating">
                 <img
-                  src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=40&h=40&fit=crop&crop=face"
-                  alt="Instructor"
-                  class="w-8 h-8 rounded-full mr-2"
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
                 />
-                <span class="text-sm text-gray-600">Eko Prasetyo</span>
+                <img
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
+                />
+                <img
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
+                />
+                <img
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
+                />
+                <img
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
+                />
+                <span>4.9</span>
               </div>
-              <div class="flex items-center justify-between">
-                <div>
-                  <span class="text-2xl font-bold" style="color: #34364a"
-                    >Rp 159K</span
-                  >
-                  <span class="text-sm text-gray-500 line-through ml-2"
-                    >Rp 449K</span
-                  >
-                </div>
-                <button class="btn-bwa-primary">Daftar</button>
-              </div>
+              <svg
+                class="icon-level"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="12" cy="12" r="10" fill="#ffc107" />
+                <path
+                  d="M12 8V12L15 15"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </div>
           </div>
 
           <!-- Course Card 6 -->
-          <div
-            class="bg-white rounded-2xl shadow-sm hover-lift overflow-hidden"
-          >
-            <div class="relative">
+          <div class="course-card-responsive bg-white animate-fade-in-up">
+            <div class="thumbnailContainer">
               <img
                 src="https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                 alt="Mobile UI Design"
-                class="w-full h-48 object-cover"
+                class="thumbnail-course"
               />
+              <div class="play-button">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
             </div>
-            <div class="p-6">
-              <div class="flex items-center mb-3">
-                <span class="badge-bwa mr-2">Mobile Design</span>
-                <span class="text-gray-500 text-sm ml-auto">14 jam</span>
+            <div class="course-detail">
+              <h3 class="course-name">Mobile App UI Design</h3>
+              <div class="course-price-wrapper">
+                <span class="disc-price">Rp 119.000</span>
+                <span class="origin-price">Rp 349.000</span>
               </div>
-              <h3 class="text-xl font-bold mb-2" style="color: #34364a">
-                Mobile App UI Design
-              </h3>
-              <p class="text-gray-600 mb-4">
-                Design aplikasi mobile yang user-friendly dengan Figma dan best
-                practices
-              </p>
-              <div class="flex items-center mb-4">
+            </div>
+            <div class="course-footer">
+              <div class="star-rating">
                 <img
-                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop&crop=face"
-                  alt="Instructor"
-                  class="w-8 h-8 rounded-full mr-2"
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
                 />
-                <span class="text-sm text-gray-600">Rina Dewi</span>
+                <img
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
+                />
+                <img
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
+                />
+                <img
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
+                />
+                <img
+                  src="https://buildwithangga.com/themes/front/images/ic_star.svg"
+                  alt="star"
+                />
+                <span>4.8</span>
               </div>
-              <div class="flex items-center justify-between">
-                <div>
-                  <span class="text-2xl font-bold" style="color: #34364a"
-                    >Rp 119K</span
-                  >
-                  <span class="text-sm text-gray-500 line-through ml-2"
-                    >Rp 349K</span
-                  >
-                </div>
-                <button class="btn-bwa-primary">Daftar</button>
-              </div>
+              <svg
+                class="icon-level"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="12" cy="12" r="10" fill="#22c58b" />
+                <path
+                  d="M8 12L11 15L16 9"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </div>
           </div>
-        </div>
-
-        <div class="text-center mt-12">
-          <a href="#" class="btn-primary-bwa inline-flex items-center">
-            Lihat Semua Kelas
-            <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20">
-              <path
-                fill-rule="evenodd"
-                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-          </a>
         </div>
       </div>
     </section>
@@ -951,9 +1446,8 @@
     <section class="bg-white py-20">
       <div class="container mx-auto px-4">
         <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-gray-900 mb-4">
-            Jalur Pembelajaran
-            <span class="text-gradient">Terstruktur</span>
+          <h2 class="text-3xl font-bold leading-relaxed text-bwa-dark mb-4">
+            Jalur Pembelajaran Terstruktur
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
             Ikuti roadmap pembelajaran yang telah dirancang khusus untuk
@@ -981,7 +1475,7 @@
                 ></path>
               </svg>
             </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+            <h3 class="text-xl font-bold text-bwa-dark mb-4">
               Full-Stack Web Developer
             </h3>
             <p class="text-gray-600 mb-6">
@@ -1066,9 +1560,7 @@
                 ></path>
               </svg>
             </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">
-              UI/UX Designer
-            </h3>
+            <h3 class="text-xl font-bold text-bwa-dark mb-4">UI/UX Designer</h3>
             <p class="text-gray-600 mb-6">
               Kuasai prinsip design, user research, prototyping, hingga design
               system yang professional
@@ -1149,9 +1641,7 @@
                 ></path>
               </svg>
             </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">
-              Data Scientist
-            </h3>
+            <h3 class="text-xl font-bold text-bwa-dark mb-4">Data Scientist</h3>
             <p class="text-gray-600 mb-6">
               Dari statistik dasar hingga machine learning advanced untuk
               mengolah big data menjadi insight
@@ -1223,9 +1713,8 @@
       <div class="container mx-auto px-4">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 class="text-4xl font-bold text-gray-900 mb-6">
-              Mengapa Memilih
-              <span class="text-gradient">TechLearn?</span>
+            <h2 class="text-3xl font-bold leading-relaxed text-bwa-dark mb-6">
+              Mengapa Memilih TechLearn?
             </h2>
             <p class="text-xl text-gray-600 mb-8">
               Kami berkomitmen memberikan pendidikan teknologi terbaik dengan
@@ -1251,9 +1740,7 @@
                   </svg>
                 </div>
                 <div>
-                  <h3 class="text-xl font-bold text-gray-900 mb-2">
-                    Mentor Expert Industry
-                  </h3>
+                  <h3 class="course-name">Mentor Expert Industry</h3>
                   <p class="text-gray-600">
                     Belajar langsung dari praktisi yang bekerja di perusahaan
                     teknologi terkemuka
@@ -1276,9 +1763,7 @@
                   </svg>
                 </div>
                 <div>
-                  <h3 class="text-xl font-bold text-gray-900 mb-2">
-                    Project-Based Learning
-                  </h3>
+                  <h3 class="course-name">Project-Based Learning</h3>
                   <p class="text-gray-600">
                     Kembangkan portfolio yang menarik dengan mengerjakan project
                     real-world
@@ -1303,9 +1788,7 @@
                   </svg>
                 </div>
                 <div>
-                  <h3 class="text-xl font-bold text-gray-900 mb-2">
-                    Community Support
-                  </h3>
+                  <h3 class="course-name">Community Support</h3>
                   <p class="text-gray-600">
                     Bergabung dengan komunitas aktif untuk networking dan saling
                     membantu
@@ -1330,9 +1813,7 @@
                   </svg>
                 </div>
                 <div>
-                  <h3 class="text-xl font-bold text-gray-900 mb-2">
-                    Lifetime Access
-                  </h3>
+                  <h3 class="course-name">Lifetime Access</h3>
                   <p class="text-gray-600">
                     Akses selamanya ke semua materi dan update terbaru tanpa
                     biaya tambahan
@@ -1359,176 +1840,233 @@
       </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="bg-white py-20">
+    <!-- Testimonials Section (testimonial-section-v3) -->
+    <section id="testimonial-section-v3">
       <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-gray-900 mb-4">
-            Kata Mereka Tentang
-            <span class="text-gradient">TechLearn</span>
-          </h2>
-          <p class="text-xl text-gray-600">
+        <div class="hidden lg:flex items-center justify-between h-full">
+          <div class="w-[540px] flex-shrink-0">
+            <div class="hero-label">Bergabung dengan 50,000+ Alumni</div>
+            <h2 class="header-title text-white">
+              Kata Mereka Tentang TechLearn
+            </h2>
+            <p class="subtitle">
+              Cerita sukses dari alumni yang telah berhasil berkarir di industri
+              teknologi
+            </p>
+            <a
+              href="#courses"
+              class="bg-bwa-primary text-white px-6 py-3 rounded-full font-semibold transition-all duration-150 border-none no-underline inline-flex items-center justify-center hover:shadow-[0_0_0_0.25rem_rgba(36,71,249,0.25)] mt-8"
+            >
+              Katalog Kelas
+            </a>
+          </div>
+
+          <div
+            class="flex"
+            style="
+              flex: 1;
+              justify-content: flex-end;
+              align-items: center;
+              position: relative;
+            "
+          >
+            <div class="testimonial-columns-wrapper">
+              <div class="testimonial-column">
+                <div class="testimonial-card">
+                  <div class="testimonial-title">Mengubah hidup saya!</div>
+                  <p class="testimonial-description">
+                    Dari background non-IT, sekarang saya bekerja sebagai
+                    Frontend Developer di startup unicorn. Materinya sangat
+                    praktis dan mentor super responsif.
+                  </p>
+                  <div class="flex items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face"
+                      alt="Ahmad Rizki"
+                      class="testimonial-profile"
+                    />
+                    <div>
+                      <div class="testimonial-author">Ahmad Rizki</div>
+                      <div class="testimonial-role">
+                        Frontend Developer di Gojek
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="testimonial-card">
+                  <div class="testimonial-title">Kelas UI/UX luar biasa!</div>
+                  <p class="testimonial-description">
+                    Sekarang saya freelance dengan rate $50/hour. Portfolio yang
+                    saya buat dari kelas ini selalu jadi pembicaraan klien.
+                  </p>
+                  <div class="flex items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=50&h=50&fit=crop&crop=face"
+                      alt="Sarah Putri"
+                      class="testimonial-profile"
+                    />
+                    <div>
+                      <div class="testimonial-author">Sarah Putri</div>
+                      <div class="testimonial-role">
+                        Freelance UI/UX Designer
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="testimonial-card">
+                  <div class="testimonial-title">
+                    Mentor yang sangat responsif
+                  </div>
+                  <p class="testimonial-description">
+                    Pertanyaan saya selalu dijawab dengan cepat dan detail.
+                    Bahkan setelah kelas selesai, mentor masih membantu review
+                    portfolio.
+                  </p>
+                  <div class="flex items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&h=50&fit=crop&crop=face"
+                      alt="Deni Pratama"
+                      class="testimonial-profile"
+                    />
+                    <div>
+                      <div class="testimonial-author">Deni Pratama</div>
+                      <div class="testimonial-role">Backend Developer</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="testimonial-column">
+                <div class="testimonial-card">
+                  <div class="testimonial-title">
+                    Project-based learning sangat membantu!
+                  </div>
+                  <p class="testimonial-description">
+                    Saya langsung bisa apply ilmu yang dipelajari. Sekarang jadi
+                    Lead Data Scientist di perusahaan fintech.
+                  </p>
+                  <div class="flex items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&h=50&fit=crop&crop=face"
+                      alt="Budi Santoso"
+                      class="testimonial-profile"
+                    />
+                    <div>
+                      <div class="testimonial-author">Budi Santoso</div>
+                      <div class="testimonial-role">
+                        Lead Data Scientist di Dana
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="testimonial-card">
+                  <div class="testimonial-title">Materi selalu update!</div>
+                  <p class="testimonial-description">
+                    Teknologi berkembang pesat, tapi materi di TechLearn selalu
+                    mengikuti trend terbaru. Sangat recommended untuk yang ingin
+                    terus berkembang.
+                  </p>
+                  <div class="flex items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face"
+                      alt="Rina Melati"
+                      class="testimonial-profile"
+                    />
+                    <div>
+                      <div class="testimonial-author">Rina Melati</div>
+                      <div class="testimonial-role">Full Stack Developer</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="testimonial-card">
+                  <div class="testimonial-title">Komunitas yang supportif</div>
+                  <p class="testimonial-description">
+                    Bukan hanya belajar coding, tapi juga dapat teman dan
+                    networking yang sangat berharga untuk karir.
+                  </p>
+                  <div class="flex items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=50&h=50&fit=crop&crop=face"
+                      alt="Maya Sari"
+                      class="testimonial-profile"
+                    />
+                    <div>
+                      <div class="testimonial-author">Maya Sari</div>
+                      <div class="testimonial-role">Product Manager</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile version -->
+        <div class="lg:hidden text-center" class="mt-8">
+          <h2 class="header-title text-white">Kata Mereka Tentang TechLearn</h2>
+          <p class="subtitle">
             Cerita sukses dari alumni yang telah berhasil berkarir di industri
             teknologi
           </p>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Testimonial 1 -->
-          <div
-            class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 hover-lift"
-          >
-            <div class="flex items-center mb-4">
-              <div class="flex text-yellow-400">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                  ></path>
-                </svg>
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                  ></path>
-                </svg>
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                  ></path>
-                </svg>
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                  ></path>
-                </svg>
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                  ></path>
-                </svg>
-              </div>
-            </div>
-            <p class="text-gray-700 mb-6 italic">
-              "TechLearn mengubah hidup saya! Dari background non-IT, sekarang
-              saya bekerja sebagai Frontend Developer di startup unicorn.
-              Materinya sangat praktis dan mentor super responsif."
+          <div class="testimonial-card" class="mb-8">
+            <div class="testimonial-title">Mengubah hidup saya!</div>
+            <p class="testimonial-description">
+              Dari background non-IT, sekarang saya bekerja sebagai Frontend
+              Developer di startup unicorn.
             </p>
-            <div class="flex items-center">
+            <div class="d-flex align-items-center">
               <img
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face"
                 alt="Ahmad Rizki"
-                class="w-12 h-12 rounded-full mr-4"
+                class="testimonial-profile"
               />
               <div>
-                <div class="font-semibold text-gray-900">Ahmad Rizki</div>
-                <div class="text-sm text-gray-600">
-                  Frontend Developer di Gojek
-                </div>
+                <div class="testimonial-author">Ahmad Rizki</div>
+                <div class="testimonial-role">Frontend Developer di Gojek</div>
               </div>
             </div>
           </div>
 
-          <!-- Testimonial 2 -->
-          <div
-            class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 hover-lift"
-          >
-            <div class="flex items-center mb-4">
-              <div class="flex text-yellow-400">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                  ></path>
-                </svg>
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                  ></path>
-                </svg>
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                  ></path>
-                </svg>
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                  ></path>
-                </svg>
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                  ></path>
-                </svg>
-              </div>
-            </div>
-            <p class="text-gray-700 mb-6 italic">
-              "Kelas UI/UX Design di TechLearn luar biasa! Sekarang saya
-              freelance dengan rate $50/hour. Portfolio yang saya buat dari
-              kelas ini selalu jadi pembicaraan klien."
+          <div class="testimonial-card" class="mb-8">
+            <div class="testimonial-title">Kelas UI/UX luar biasa!</div>
+            <p class="testimonial-description">
+              Sekarang saya freelance dengan rate $50/hour. Portfolio yang saya
+              buat dari kelas ini selalu jadi pembicaraan klien.
             </p>
-            <div class="flex items-center">
+            <div class="d-flex align-items-center">
               <img
-                src="https://images.unsplash.com/photo-1494790108755-2616b612b17c?w=50&h=50&fit=crop&crop=face"
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=50&h=50&fit=crop&crop=face"
                 alt="Sarah Putri"
-                class="w-12 h-12 rounded-full mr-4"
+                class="testimonial-profile"
               />
               <div>
-                <div class="font-semibold text-gray-900">Sarah Putri</div>
-                <div class="text-sm text-gray-600">
-                  Freelance UI/UX Designer
-                </div>
+                <div class="testimonial-author">Sarah Putri</div>
+                <div class="testimonial-role">Freelance UI/UX Designer</div>
               </div>
             </div>
           </div>
 
-          <!-- Testimonial 3 -->
-          <div
-            class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 hover-lift"
-          >
-            <div class="flex items-center mb-4">
-              <div class="flex text-yellow-400">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                  ></path>
-                </svg>
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                  ></path>
-                </svg>
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                  ></path>
-                </svg>
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                  ></path>
-                </svg>
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                  ></path>
-                </svg>
-              </div>
+          <div class="testimonial-card">
+            <div class="testimonial-title">
+              Project-based learning sangat membantu!
             </div>
-            <p class="text-gray-700 mb-6 italic">
-              "Project-based learning di TechLearn sangat membantu! Saya
-              langsung bisa apply ilmu yang dipelajari. Sekarang jadi Lead Data
-              Scientist di perusahaan fintech."
+            <p class="testimonial-description">
+              Saya langsung bisa apply ilmu yang dipelajari. Sekarang jadi Lead
+              Data Scientist di perusahaan fintech.
             </p>
-            <div class="flex items-center">
+            <div class="d-flex align-items-center">
               <img
                 src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&h=50&fit=crop&crop=face"
                 alt="Budi Santoso"
-                class="w-12 h-12 rounded-full mr-4"
+                class="testimonial-profile"
               />
               <div>
-                <div class="font-semibold text-gray-900">Budi Santoso</div>
-                <div class="text-sm text-gray-600">
-                  Lead Data Scientist di Dana
-                </div>
+                <div class="testimonial-author">Budi Santoso</div>
+                <div class="testimonial-role">Lead Data Scientist di Dana</div>
               </div>
             </div>
           </div>
@@ -1536,234 +2074,108 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="contact" class="bg-white py-16">
-      <div class="container mx-auto px-4">
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <!-- Company Info -->
-          <div class="lg:col-span-1">
-            <div class="text-2xl font-bold mb-4" style="color: #34364a">
-              TechLearn
-            </div>
-            <p class="text-gray-600 mb-6">
-              Platform pembelajaran teknologi terdepan untuk mengembangkan karir
-              di era digital.
+    <!-- Footer (footer-nd) -->
+    <section class="footer-nd">
+      <div class="container mx-auto px-4 lg:px-12">
+        <div class="flex flex-wrap">
+          <div class="item-footer w-full lg:w-1/4 lg:pr-8">
+            <div class="text-2xl font-bold mb-4 text-bwa-dark">TechLearn</div>
+            <p class="tagline" class="mb-2">PT. TechLearn Indonesia</p>
+            <p class="tagline" class="mb-2">Gedung Cyber 2 Tower, Lt. 17</p>
+            <p class="tagline" class="mb-2">
+              Jl. H.R. Rasuna Said, Jakarta Selatan
             </p>
-            <div class="flex space-x-4">
-              <a
-                href="#"
-                class="w-10 h-10 rounded-lg flex items-center justify-center transition-colors"
-                style="background: #2447f9"
-                onmouseover="this.style.background='#1e3bd8'"
-                onmouseout="this.style.background='#2447f9'"
-              >
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
-                  />
-                </svg>
-              </a>
-              <a
-                href="#"
-                class="w-10 h-10 rounded-lg flex items-center justify-center transition-colors"
-                style="background: #2447f9"
-                onmouseover="this.style.background='#1e3bd8'"
-                onmouseout="this.style.background='#2447f9'"
-              >
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"
-                  />
-                </svg>
-              </a>
-              <a
-                href="#"
-                class="w-10 h-10 rounded-lg flex items-center justify-center transition-colors"
-                style="background: #2447f9"
-                onmouseover="this.style.background='#1e3bd8'"
-                onmouseout="this.style.background='#2447f9'"
-              >
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
-                  />
-                </svg>
-              </a>
-              <a
-                href="#"
-                class="w-10 h-10 rounded-lg flex items-center justify-center transition-colors"
-                style="background: #2447f9"
-                onmouseover="this.style.background='#1e3bd8'"
-                onmouseout="this.style.background='#2447f9'"
-              >
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.163-1.507-.703-2.448-2.909-2.448-4.68 0-3.818 2.763-7.325 7.963-7.325 4.187 0 7.444 2.98 7.444 6.973 0 4.161-2.628 7.507-6.279 7.507-1.22 0-2.37-.636-2.76-1.393l-.75 2.854c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <!-- Quick Links -->
-          <div>
-            <h3 class="text-lg font-semibold mb-4">Navigasi</h3>
-            <ul class="space-y-3">
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-600 hover:text-gray-400 transition-colors"
-                  >Beranda</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#courses"
-                  class="text-gray-600 hover:text-gray-400 transition-colors"
-                  >Kelas</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#about"
-                  class="text-gray-600 hover:text-gray-400 transition-colors"
-                  >Tentang</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-600 hover:text-gray-400 transition-colors"
-                  >Blog</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  class="text-gray-600 hover:text-gray-400 transition-colors"
-                  >Kontak</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Categories -->
-          <div>
-            <h3 class="text-lg font-semibold mb-4">Kategori Kelas</h3>
-            <ul class="space-y-3">
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-600 hover:text-gray-400 transition-colors"
-                  >Programming</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-600 hover:text-gray-400 transition-colors"
-                  >UI/UX Design</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-600 hover:text-gray-400 transition-colors"
-                  >Data Science</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-600 hover:text-gray-400 transition-colors"
-                  >Mobile Development</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-600 hover:text-gray-400 transition-colors"
-                  >DevOps</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Contact Info -->
-          <div>
-            <h3 class="text-lg font-semibold mb-4">Kontak</h3>
-            <div class="space-y-3">
-              <div class="flex items-center">
-                <svg
-                  class="w-5 h-5 text-primary-500 mr-3"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
-                  ></path>
-                  <path
-                    d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
-                  ></path>
-                </svg>
-                <span class="text-gray-600">hello@techlearn.id</span>
-              </div>
-              <div class="flex items-center">
-                <svg
-                  class="w-5 h-5 text-primary-500 mr-3"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-                <span class="text-gray-600">Jakarta, Indonesia</span>
-              </div>
-              <div class="flex items-center">
-                <svg
-                  class="w-5 h-5 text-primary-500 mr-3"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
-                  ></path>
-                </svg>
-                <span class="text-gray-600">+62 812-3456-7890</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="border-t border-gray-100 mt-12 pt-8">
-          <div class="flex flex-col md:flex-row justify-between items-center">
-            <p class="text-gray-600 text-sm">
-              © 2025 TechLearn Indonesia. All rights reserved.
+            <p class="tagline" class="mb-2">+62 21-5795-4321 (Call Center)</p>
+            <p class="tagline" class="mb-2">
+              <a href="mailto:info@techlearn.id">info@techlearn.id</a>
             </p>
-            <div class="flex space-x-6 mt-4 md:mt-0">
-              <a
-                href="#"
-                class="text-gray-600 hover:text-gray-400 text-sm transition-colors"
-                >Privacy Policy</a
-              >
-              <a
-                href="#"
-                class="text-gray-600 hover:text-gray-400 text-sm transition-colors"
-                >Terms of Service</a
-              >
-              <a
-                href="#"
-                class="text-gray-600 hover:text-gray-400 text-sm transition-colors"
-                >Cookie Policy</a
-              >
+            <p class="tagline">© 2024-2025 TechLearn Indonesia</p>
+          </div>
+
+          <div class="w-full lg:w-3/4">
+            <div class="flex flex-wrap justify-between">
+              <div class="item-footer w-full md:w-1/2 lg:w-1/3 mb-8">
+                <p class="header-category">Kategori Kelas</p>
+                <ul>
+                  <li>
+                    <a href="#">UI/UX Design</a>
+                  </li>
+                  <li>
+                    <a href="#">Web Development</a>
+                  </li>
+                  <li>
+                    <a href="#">Mobile Apps</a>
+                  </li>
+                  <li>
+                    <a href="#">Data Science</a>
+                  </li>
+                  <li>
+                    <a href="#">Digital Marketing</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="item-footer w-full md:w-1/2 lg:w-1/3 mb-8">
+                <p class="header-category">Platform & Tools</p>
+                <ul>
+                  <li><a href="#">Figma</a></li>
+                  <li><a href="#">VS Code</a></li>
+                  <li><a href="#">React.js</a></li>
+                  <li><a href="#">Node.js</a></li>
+                  <li><a href="#">Python</a></li>
+                </ul>
+              </div>
+
+              <div class="item-footer w-full md:w-1/2 lg:w-1/3 mb-8">
+                <p class="header-category">Bahasa Pemrograman</p>
+                <ul>
+                  <li><a href="#">JavaScript</a></li>
+                  <li><a href="#">Python</a></li>
+                  <li><a href="#">TypeScript</a></li>
+                  <li><a href="#">HTML & CSS</a></li>
+                  <li><a href="#">Go</a></li>
+                </ul>
+              </div>
+
+              <div class="item-footer w-full md:w-1/2 lg:w-1/3 mb-8">
+                <p class="header-category">Sumber Belajar</p>
+                <ul>
+                  <li>
+                    <a href="#">Panduan Karir</a>
+                  </li>
+                  <li>
+                    <a href="#">E-Book Gratis</a>
+                  </li>
+                  <li>
+                    <a href="#">Blog & Tutorial</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="item-footer w-full md:w-1/2 lg:w-1/3 mb-8">
+                <p class="header-category">Komunitas</p>
+                <ul>
+                  <li><a href="#">Discord</a></li>
+                  <li><a href="#">Forum Diskusi</a></li>
+                  <li><a href="#">Study Group</a></li>
+                </ul>
+              </div>
+
+              <div class="item-footer w-full md:w-1/2 lg:w-1/3 mb-8">
+                <p class="header-category">Tentang Kami</p>
+                <ul>
+                  <li><a href="#">Tentang TechLearn</a></li>
+                  <li><a href="#contact">Hubungi Kami</a></li>
+                  <li><a target="_blank" href="#">YouTube</a></li>
+                  <li><a target="_blank" href="#">Instagram</a></li>
+                  <li><a target="_blank" href="#">LinkedIn</a></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </footer>
+    </section>
 
     <script>
       // Mobile menu toggle
