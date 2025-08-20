@@ -40,12 +40,6 @@
       rel="stylesheet"
     />
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-
     <!-- Tailwind CSS v4 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -55,11 +49,40 @@
             colors: {
               "bwa-primary": "#2447f9",
               "bwa-secondary": "#22c58b",
-              "bwa-dark": "#121829",
-              "bwa-light": "#f8f9fb",
+              "bwa-dark": "#34364a",
+              "bwa-light": "#f6f8fd",
             },
             fontFamily: {
               poppins: ["Poppins", "sans-serif"],
+            },
+            animation: {
+              "fade-in-up": "fadeInUp 0.6s ease-out",
+              "fade-in": "fadeIn 0.6s ease-out",
+              move: "move 15s ease-in infinite",
+              "move-down": "move-down 15s ease-in infinite",
+            },
+            keyframes: {
+              fadeInUp: {
+                from: { opacity: "0", transform: "translateY(30px)" },
+                to: { opacity: "1", transform: "translateY(0)" },
+              },
+              fadeIn: {
+                from: { opacity: "0" },
+                to: { opacity: "1" },
+              },
+              move: {
+                "0%": { top: "70px" },
+                "50%": { top: "-55px" },
+                "100%": { top: "70px" },
+              },
+              "move-down": {
+                "0%": { bottom: "70px" },
+                "50%": { bottom: "-55px" },
+                "100%": { bottom: "70px" },
+              },
+            },
+            spacing: {
+              25: "100px",
             },
           },
         },
@@ -432,7 +455,7 @@
         }
       }
 
-      #testimonial-section-v3 .hero-label {
+      #testimonial-section-v3 {
         font-weight: 500;
         font-size: 18px;
         line-height: 27px;
@@ -461,14 +484,8 @@
         margin-top: 100px;
         padding-top: 80px;
       }
-      .footer-nd .container-fluid,
-      .footer-nd .container-sm,
-      .footer-nd .container-md,
-      .footer-nd .container-lg,
-      .footer-nd .container-xl,
-      .footer-nd .container-xxl {
-        padding-right: 50px;
-        padding-left: 50px;
+      .footer-nd .container {
+        max-width: 1200px;
       }
       .footer-nd p,
       .footer-nd p a {
@@ -517,15 +534,6 @@
       @media (max-width: 767px) {
         .footer-nd {
           margin-top: 0;
-        }
-        .footer-nd .container-fluid,
-        .footer-nd .container-sm,
-        .footer-nd .container-md,
-        .footer-nd .container-lg,
-        .footer-nd .container-xl,
-        .footer-nd .container-xxl {
-          padding-right: 16px;
-          padding-left: 16px;
         }
         .footer-nd .item-footer {
           margin-bottom: 30px;
@@ -667,9 +675,7 @@
         <div class="flex justify-between items-center">
           <!-- Logo -->
           <div class="flex items-center">
-            <span class="text-2xl font-bold" style="color: #34364a"
-              >TechLearn</span
-            >
+            <span class="text-2xl font-bold text-bwa-dark">TechLearn</span>
             <span class="text-gray-500 text-sm ml-2 hidden sm:block"
               >Indonesia</span
             >
@@ -679,20 +685,14 @@
           <div class="hidden lg:flex items-center space-x-8">
             <a
               href="#flash-sale"
-              class="font-medium transition-colors"
-              style="color: #34364a"
-              onmouseover="this.style.color='#2447f9'"
-              onmouseout="this.style.color='#34364a'"
+              class="font-medium transition-colors text-bwa-dark hover:text-bwa-primary"
               >Flash Sale</a
             >
 
             <!-- Courses Dropdown -->
             <div class="relative group">
               <button
-                class="font-medium transition-colors flex items-center"
-                style="color: #34364a"
-                onmouseover="this.style.color='#2447f9'"
-                onmouseout="this.style.color='#34364a'"
+                class="font-medium transition-colors flex items-center text-bwa-dark hover:text-bwa-primary"
               >
                 Kelas
                 <svg
@@ -715,7 +715,7 @@
                 <div class="course-detail">
                   <div class="grid grid-cols-2 gap-6">
                     <div>
-                      <h6 class="font-semibold mb-3" style="color: #34364a">
+                      <h6 class="font-semibold mb-3 text-bwa-dark">
                         Programming
                       </h6>
                       <div class="space-y-2">
@@ -742,9 +742,7 @@
                       </div>
                     </div>
                     <div>
-                      <h6 class="font-semibold mb-3" style="color: #34364a">
-                        Design
-                      </h6>
+                      <h6 class="font-semibold mb-3 text-bwa-dark">Design</h6>
                       <div class="space-y-2">
                         <a
                           href="#"
@@ -776,18 +774,12 @@
 
             <a
               href="#about"
-              class="font-medium transition-colors"
-              style="color: #34364a"
-              onmouseover="this.style.color='#2447f9'"
-              onmouseout="this.style.color='#34364a'"
+              class="font-medium transition-colors text-bwa-dark hover:text-bwa-primary"
               >Tentang</a
             >
             <a
               href="#contact"
-              class="font-medium transition-colors"
-              style="color: #34364a"
-              onmouseover="this.style.color='#2447f9'"
-              onmouseout="this.style.color='#34364a'"
+              class="font-medium transition-colors text-bwa-dark hover:text-bwa-primary"
               >Kontak</a
             >
           </div>
@@ -804,8 +796,16 @@
                 ></path>
               </svg>
             </button>
-            <a href="#" class="btn-bwa-secondary">Masuk</a>
-            <a href="#" class="btn-bwa-secondary">Daftar</a>
+            <a
+              href="#"
+              class="bg-gray-200 text-bwa-dark px-6 py-3 rounded-full font-semibold transition-all duration-150 inline-flex items-center justify-center hover:shadow-[10px_12px_20px_#e7ebf5]"
+              >Masuk</a
+            >
+            <a
+              href="#"
+              class="bg-gray-200 text-bwa-dark px-6 py-3 rounded-full font-semibold transition-all duration-150 inline-flex items-center justify-center hover:shadow-[10px_12px_20px_#e7ebf5]"
+              >Daftar</a
+            >
           </div>
 
           <!-- Mobile Menu Button -->
@@ -831,34 +831,22 @@
           <div class="space-y-2 py-4 border-t">
             <a
               href="#flash-sale"
-              class="block py-2 transition-colors"
-              style="color: #34364a"
-              onmouseover="this.style.color='#2447f9'"
-              onmouseout="this.style.color='#34364a'"
+              class="block py-2 transition-colors text-bwa-dark hover:text-bwa-primary"
               >Flash Sale</a
             >
             <a
               href="#courses"
-              class="block py-2 transition-colors"
-              style="color: #34364a"
-              onmouseover="this.style.color='#2447f9'"
-              onmouseout="this.style.color='#34364a'"
+              class="block py-2 transition-colors text-bwa-dark hover:text-bwa-primary"
               >Kelas</a
             >
             <a
               href="#about"
-              class="block py-2 transition-colors"
-              style="color: #34364a"
-              onmouseover="this.style.color='#2447f9'"
-              onmouseout="this.style.color='#34364a'"
+              class="block py-2 transition-colors text-bwa-dark hover:text-bwa-primary"
               >Tentang</a
             >
             <a
               href="#contact"
-              class="block py-2 transition-colors"
-              style="color: #34364a"
-              onmouseover="this.style.color='#2447f9'"
-              onmouseout="this.style.color='#34364a'"
+              class="block py-2 transition-colors text-bwa-dark hover:text-bwa-primary"
               >Kontak</a
             >
             <div class="pt-4 border-t mt-4 space-y-2">
@@ -879,7 +867,9 @@
             <p class="hero-label mb-6">Trusted by 50K+ Students</p>
 
             <!-- Main Heading -->
-            <h1 class="text-hero mb-6 leading-tight animate-fade-in-up">
+            <h1
+              class="text-5xl font-bold leading-tight text-bwa-dark mb-6 animate-fade-in-up"
+            >
               Bangun Karir Tech <br />
               Impianmu
             </h1>
@@ -887,8 +877,8 @@
             <!-- Subheading -->
             <p class="text-xl text-gray-600 mb-8 leading-relaxed">
               Bergabunglah dengan ribuan profesional yang telah mengembangkan
-              skill programming dan design bersama mentor expert di
-              BuildWithAngga Indonesia.
+              skill programming dan design bersama mentor expert di TechLearn
+              Indonesia.
             </p>
 
             <!-- CTA Buttons -->
@@ -1043,10 +1033,12 @@
     </section>
 
     <!-- Featured Courses Section -->
-    <section id="courses" class="py-20" style="background-color: #f8f9fb">
+    <section id="courses" class="py-20 bg-bwa-light">
       <div class="container mx-auto px-4">
         <div class="text-center mb-16">
-          <h2 class="text-section-title mb-4 animate-fade-in-up">
+          <h2
+            class="text-3xl font-bold leading-relaxed text-bwa-dark mb-4 animate-fade-in-up"
+          >
             Kelas Paling Populer
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -1454,7 +1446,7 @@
     <section class="bg-white py-20">
       <div class="container mx-auto px-4">
         <div class="text-center mb-16">
-          <h2 class="text-section-title mb-4">
+          <h2 class="text-3xl font-bold leading-relaxed text-bwa-dark mb-4">
             Jalur Pembelajaran Terstruktur
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -1483,7 +1475,9 @@
                 ></path>
               </svg>
             </div>
-            <h3 class="text-card-title mb-4">Full-Stack Web Developer</h3>
+            <h3 class="text-xl font-bold text-bwa-dark mb-4">
+              Full-Stack Web Developer
+            </h3>
             <p class="text-gray-600 mb-6">
               Mulai dari HTML/CSS hingga deployment aplikasi web kompleks dengan
               modern framework
@@ -1566,7 +1560,7 @@
                 ></path>
               </svg>
             </div>
-            <h3 class="text-card-title mb-4">UI/UX Designer</h3>
+            <h3 class="text-xl font-bold text-bwa-dark mb-4">UI/UX Designer</h3>
             <p class="text-gray-600 mb-6">
               Kuasai prinsip design, user research, prototyping, hingga design
               system yang professional
@@ -1647,7 +1641,7 @@
                 ></path>
               </svg>
             </div>
-            <h3 class="text-card-title mb-4">Data Scientist</h3>
+            <h3 class="text-xl font-bold text-bwa-dark mb-4">Data Scientist</h3>
             <p class="text-gray-600 mb-6">
               Dari statistik dasar hingga machine learning advanced untuk
               mengolah big data menjadi insight
@@ -1719,7 +1713,9 @@
       <div class="container mx-auto px-4">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 class="text-section-title mb-6">Mengapa Memilih TechLearn?</h2>
+            <h2 class="text-3xl font-bold leading-relaxed text-bwa-dark mb-6">
+              Mengapa Memilih TechLearn?
+            </h2>
             <p class="text-xl text-gray-600 mb-8">
               Kami berkomitmen memberikan pendidikan teknologi terbaik dengan
               metode pembelajaran yang interaktif dan mentor berpengalaman
@@ -1847,13 +1843,10 @@
     <!-- Testimonials Section (testimonial-section-v3) -->
     <section id="testimonial-section-v3">
       <div class="container mx-auto px-4">
-        <div
-          class="hidden lg:flex items-center justify-between"
-          style="height: 100%"
-        >
-          <div style="width: 540px; flex-shrink: 0">
+        <div class="hidden lg:flex items-center justify-between h-full">
+          <div class="w-[540px] flex-shrink-0">
             <div class="hero-label">Bergabung dengan 50,000+ Alumni</div>
-            <h2 class="header-title" style="color: white">
+            <h2 class="header-title text-white">
               Kata Mereka Tentang TechLearn
             </h2>
             <p class="subtitle">
@@ -1862,8 +1855,7 @@
             </p>
             <a
               href="#courses"
-              class="btn-bwa-primary"
-              style="margin-top: 30px; display: inline-block"
+              class="bg-bwa-primary text-white px-6 py-3 rounded-full font-semibold transition-all duration-150 border-none no-underline inline-flex items-center justify-center hover:shadow-[0_0_0_0.25rem_rgba(36,71,249,0.25)] mt-8"
             >
               Katalog Kelas
             </a>
@@ -2014,15 +2006,13 @@
         </div>
 
         <!-- Mobile version -->
-        <div class="lg:hidden text-center" style="margin-top: 30px">
-          <h2 class="header-title" style="color: white">
-            Kata Mereka Tentang TechLearn
-          </h2>
+        <div class="lg:hidden text-center" class="mt-8">
+          <h2 class="header-title text-white">Kata Mereka Tentang TechLearn</h2>
           <p class="subtitle">
             Cerita sukses dari alumni yang telah berhasil berkarir di industri
             teknologi
           </p>
-          <div class="testimonial-card" style="margin-bottom: 30px">
+          <div class="testimonial-card" class="mb-8">
             <div class="testimonial-title">Mengubah hidup saya!</div>
             <p class="testimonial-description">
               Dari background non-IT, sekarang saya bekerja sebagai Frontend
@@ -2041,7 +2031,7 @@
             </div>
           </div>
 
-          <div class="testimonial-card" style="margin-bottom: 30px">
+          <div class="testimonial-card" class="mb-8">
             <div class="testimonial-title">Kelas UI/UX luar biasa!</div>
             <p class="testimonial-description">
               Sekarang saya freelance dengan rate $50/hour. Portfolio yang saya
@@ -2086,33 +2076,25 @@
 
     <!-- Footer (footer-nd) -->
     <section class="footer-nd">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="item-footer col-lg-3 col-10">
-            <div class="text-2xl font-bold mb-4" style="color: #34364a">
-              TechLearn
-            </div>
-            <p class="tagline" style="margin-bottom: 10px">
-              PT. TechLearn Indonesia
-            </p>
-            <p class="tagline" style="margin-bottom: 10px">
-              Gedung Cyber 2 Tower, Lt. 17
-            </p>
-            <p class="tagline" style="margin-bottom: 10px">
+      <div class="container mx-auto px-4 lg:px-12">
+        <div class="flex flex-wrap">
+          <div class="item-footer w-full lg:w-1/4 lg:pr-8">
+            <div class="text-2xl font-bold mb-4 text-bwa-dark">TechLearn</div>
+            <p class="tagline" class="mb-2">PT. TechLearn Indonesia</p>
+            <p class="tagline" class="mb-2">Gedung Cyber 2 Tower, Lt. 17</p>
+            <p class="tagline" class="mb-2">
               Jl. H.R. Rasuna Said, Jakarta Selatan
             </p>
-            <p class="tagline" style="margin-bottom: 10px">
-              +62 21-5795-4321 (Call Center)
-            </p>
-            <p class="tagline" style="margin-bottom: 10px">
+            <p class="tagline" class="mb-2">+62 21-5795-4321 (Call Center)</p>
+            <p class="tagline" class="mb-2">
               <a href="mailto:info@techlearn.id">info@techlearn.id</a>
             </p>
             <p class="tagline">© 2024-2025 TechLearn Indonesia</p>
           </div>
-          <div class="item-footer col-lg-1 col-12"></div>
-          <div class="col-lg-8 col-12">
-            <div class="row justify-content-between">
-              <div class="item-footer col-lg-3 col-12">
+
+          <div class="w-full lg:w-3/4">
+            <div class="flex flex-wrap justify-between">
+              <div class="item-footer w-full md:w-1/2 lg:w-1/3 mb-8">
                 <p class="header-category">Kategori Kelas</p>
                 <ul>
                   <li>
@@ -2133,7 +2115,7 @@
                 </ul>
               </div>
 
-              <div class="item-footer col-lg-3 col-6">
+              <div class="item-footer w-full md:w-1/2 lg:w-1/3 mb-8">
                 <p class="header-category">Platform & Tools</p>
                 <ul>
                   <li><a href="#">Figma</a></li>
@@ -2144,7 +2126,7 @@
                 </ul>
               </div>
 
-              <div class="item-footer col-lg-3 col-6">
+              <div class="item-footer w-full md:w-1/2 lg:w-1/3 mb-8">
                 <p class="header-category">Bahasa Pemrograman</p>
                 <ul>
                   <li><a href="#">JavaScript</a></li>
@@ -2154,9 +2136,8 @@
                   <li><a href="#">Go</a></li>
                 </ul>
               </div>
-            </div>
-            <div class="row">
-              <div class="item-footer col-lg-3 col-6">
+
+              <div class="item-footer w-full md:w-1/2 lg:w-1/3 mb-8">
                 <p class="header-category">Sumber Belajar</p>
                 <ul>
                   <li>
@@ -2170,7 +2151,8 @@
                   </li>
                 </ul>
               </div>
-              <div class="item-footer col-lg-3 col-6">
+
+              <div class="item-footer w-full md:w-1/2 lg:w-1/3 mb-8">
                 <p class="header-category">Komunitas</p>
                 <ul>
                   <li><a href="#">Discord</a></li>
@@ -2178,7 +2160,8 @@
                   <li><a href="#">Study Group</a></li>
                 </ul>
               </div>
-              <div class="item-footer col-lg-3 col-6">
+
+              <div class="item-footer w-full md:w-1/2 lg:w-1/3 mb-8">
                 <p class="header-category">Tentang Kami</p>
                 <ul>
                   <li><a href="#">Tentang TechLearn</a></li>
