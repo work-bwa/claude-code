@@ -51,9 +51,25 @@
               "bwa-secondary": "#22c58b",
               "bwa-dark": "#34364a",
               "bwa-light": "#f6f8fd",
+              "bwa-gray": "#999aa4",
+              "bwa-light-gray": "#a9a4bc",
+              "bwa-light-blue": "#e8efff",
+              "bwa-light-secondary": "#e5e9f2",
+              "bwa-testimonial-bg": "#181230",
+              "bwa-green": "#47bb8e",
+              "bwa-promo": "#110843",
             },
             fontFamily: {
               poppins: ["Poppins", "sans-serif"],
+            },
+            fontSize: {
+              hero: ["46px", { lineHeight: "1.2" }],
+              "section-title": ["32px", { lineHeight: "1.3" }],
+              stats: ["46px", { lineHeight: "1" }],
+              "hero-label": ["1.125rem", { lineHeight: "27px" }],
+              "testimonial-title": ["18px", { lineHeight: "27px" }],
+              "testimonial-desc": ["16px", { lineHeight: "24px" }],
+              "testimonial-author": ["12px", { lineHeight: "18px" }],
             },
             animation: {
               "fade-in-up": "fadeInUp 0.6s ease-out",
@@ -84,72 +100,68 @@
             spacing: {
               25: "100px",
             },
+            boxShadow: {
+              "bwa-primary": "0 0 0 0.25rem rgba(36, 71, 249, 0.25)",
+              "bwa-secondary": "10px 12px 20px #e7ebf5",
+              "bwa-lift": "0 20px 40px rgba(36, 71, 249, 0.15)",
+            },
+            backgroundImage: {
+              "text-gradient":
+                "linear-gradient(135deg, #2447f9 0%, #22c58b 100%)",
+            },
+            transitionDuration: {
+              150: "150ms",
+            },
+            minHeight: {
+              "course-card": "360px",
+              "course-thumb": "190px",
+              "course-title": "55px",
+            },
+            maxHeight: {
+              "course-thumb": "190px",
+            },
+            width: {
+              testimonial: "300px",
+              "testimonial-main": "540px",
+            },
+            maxWidth: {
+              testimonial: "300px",
+              "footer-tagline": "216px",
+            },
           },
         },
       };
     </script>
 
-    <!-- Custom Styles -->
+    <!-- Tailwind Custom Styles -->
     <style>
-      body {
-        font-family: "Poppins", sans-serif;
-        background-color: #f6f8fd;
-      }
+      /* Body styling moved to body tag class */
 
-      /* BuildWithAngga Button Styles */
+      /* Button Styles with Tailwind @apply */
       .btn-bwa-primary {
-        background: #2447f9;
-        color: white;
-        padding: 12px 24px;
-        border-radius: 50px;
-        font-weight: 600;
+        @apply bg-bwa-primary text-white px-6 py-3 rounded-full font-semibold duration-150 border-none no-underline inline-flex items-center justify-center;
         transition: all 0.15s ease-in-out;
-        border: none;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
       }
 
       .btn-bwa-primary:hover {
-        background: #2447f9;
-        color: white;
+        @apply bg-bwa-primary text-white;
         box-shadow: 0 0 0 0.25rem rgba(36, 71, 249, 0.25);
       }
 
       .btn-bwa-secondary {
-        background: #e5e9f2;
-        color: #34364a;
-        font-size: 1rem;
-        padding: 12px 24px;
-        border-radius: 100px;
-        border: 0;
-        font-weight: 600;
+        @apply bg-bwa-light-secondary text-bwa-dark text-base px-6 py-3 rounded-full border-0 font-semibold duration-150 leading-6 no-underline inline-flex items-center justify-center;
         transition: all 0.15s ease-in-out;
-        line-height: 24px;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
       }
 
       .btn-bwa-secondary:hover {
-        background: #e5e9f2;
-        color: #34364a;
+        @apply bg-bwa-light-secondary text-bwa-dark;
         box-shadow: 10px 12px 20px #e7ebf5;
       }
 
-      /* Badge BWA */
       .badge-bwa {
-        background: #e8efff;
-        color: #2447f9;
-        padding: 8px 22px;
-        border-radius: 99px;
-        font-weight: 600;
-        font-size: 0.875rem;
+        @apply bg-bwa-light-blue text-bwa-primary px-6 py-2 rounded-full font-semibold text-sm;
       }
 
-      /* Text Gradient */
       .text-gradient {
         background: linear-gradient(135deg, #2447f9 0%, #22c58b 100%);
         -webkit-background-clip: text;
@@ -157,8 +169,8 @@
         background-clip: text;
       }
 
-      /* Hover Effects */
       .hover-lift {
+        @apply duration-150;
         transition: all 0.15s ease-in-out;
       }
 
@@ -167,7 +179,6 @@
         box-shadow: 0 20px 40px rgba(36, 71, 249, 0.15);
       }
 
-      /* Navigation Blur */
       .nav-blur {
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
@@ -177,44 +188,26 @@
       }
 
       .nav-transparent {
-        background: #f8f9fb;
+        background: #f6f8fd;
         border-bottom: 1px solid transparent;
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
       }
 
-      /* Typography Scale - BuildWithAngga Style */
       .text-hero {
-        font-size: 46px;
-        font-weight: 700;
-        line-height: 1.2;
-        color: #34364a;
+        @apply text-hero font-bold text-bwa-dark;
       }
 
       .text-section-title {
-        font-size: 32px;
-        font-weight: 700;
-        line-height: 1.3;
-        color: #34364a;
-      }
-
-      .text-card-title {
-        font-size: 20px;
-        font-weight: 700;
-        color: #34364a;
+        @apply text-section-title font-bold text-bwa-dark;
       }
 
       .text-stats {
-        font-size: 46px;
-        font-weight: 700;
+        @apply text-stats font-bold;
       }
 
-      /* Hero Label like BuildWithAngga */
       .hero-label {
-        font-weight: 500;
-        font-size: 1.125rem;
-        line-height: 27px;
-        color: #47bb8e;
+        @apply text-hero-label font-medium text-bwa-green;
       }
 
       /* Keyframe Animations - BuildWithAngga Style */
@@ -613,9 +606,9 @@
     </style>
   </head>
 
-  <body class="font-poppins">
+  <body class="font-poppins bg-bwa-light">
     <!-- Promotional Banner -->
-    <div class="bg-[#110843] text-white py-4">
+    <div class="bg-bwa-promo text-white py-4">
       <div class="container mx-auto px-4">
         <div class="flex flex-wrap items-center justify-between">
           <div class="flex items-center space-x-6">
@@ -2217,37 +2210,6 @@
       // Observe elements for animation
       document.querySelectorAll(".hover-lift").forEach((el) => {
         observer.observe(el);
-      });
-
-      // Course filter functionality
-      const filterButtons = document.querySelectorAll(".course-filter");
-      const courseCards = document.querySelectorAll(".course-card");
-
-      filterButtons.forEach((button) => {
-        button.addEventListener("click", function () {
-          const category = this.getAttribute("data-category");
-
-          // Update active button
-          filterButtons.forEach((btn) => {
-            btn.classList.remove("btn-primary-bwa");
-            btn.classList.add("btn-secondary-bwa");
-          });
-          this.classList.remove("btn-secondary-bwa");
-          this.classList.add("btn-primary-bwa");
-
-          // Filter courses
-          courseCards.forEach((card) => {
-            if (
-              category === "all" ||
-              card.getAttribute("data-category") === category
-            ) {
-              card.style.display = "block";
-              card.classList.add("animate-fade-in");
-            } else {
-              card.style.display = "none";
-            }
-          });
-        });
       });
 
       // Mobile Menu Toggle
