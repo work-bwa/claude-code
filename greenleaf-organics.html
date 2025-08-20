@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GreenLeaf Organics - Pertanian Organik Modern & Berkelanjutan</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="GreenLeaf Organics adalah startup pertanian modern yang memproduksi sayuran, buah, dan herbal organik dengan metode hidroponik ramah lingkungan. Produk segar dan sehat langsung dari kebun."
+    />
+    <meta
+      name="keywords"
+      content="Pertanian Organik, Hidroponik, Sayuran Organik, Buah Organik, Herbal Organik, Ramah Lingkungan, Sustainable Agriculture, GreenLeaf Organics"
+    />
+    <meta name="author" content="GreenLeaf Organics" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="GreenLeaf Organics - Pertanian Organik Modern & Berkelanjutan"
+    />
+    <meta property="og:site_name" content="GreenLeaf Organics" />
+    <meta property="og:url" content="https://greenleaf-organics.id/" />
+    <meta
+      property="og:description"
+      content="Startup pertanian modern yang memproduksi sayuran, buah, dan herbal organik dengan metode hidroponik ramah lingkungan."
+    />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS v4 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "green-primary": "#2D5A3D",
+              "green-secondary": "#4A7C59",
+              "green-accent": "#7CB342",
+              "green-light": "#F1F8E9",
+              "green-dark": "#1B3A2B",
+              "green-fresh": "#81C784",
+              "green-organic": "#6B9D3F",
+              "green-natural": "#9CCC65",
+              "green-earth": "#8BC34A",
+              "green-leaf": "#689F38",
+              "orange-complement": "#D2453D",
+            },
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
+            fontSize: {
+              hero: ["46px", { lineHeight: "1.2" }],
+              "section-title": ["32px", { lineHeight: "1.3" }],
+              stats: ["46px", { lineHeight: "1" }],
+              "hero-label": ["1.125rem", { lineHeight: "27px" }],
+              "testimonial-title": ["18px", { lineHeight: "27px" }],
+              "testimonial-desc": ["16px", { lineHeight: "24px" }],
+              "testimonial-author": ["12px", { lineHeight: "18px" }],
+            },
+            animation: {
+              "fade-in-up": "fadeInUp 0.6s ease-out",
+              "fade-in": "fadeIn 0.6s ease-out",
+              move: "move 15s ease-in infinite",
+              "move-down": "move-down 15s ease-in infinite",
+            },
+            keyframes: {
+              fadeInUp: {
+                from: { opacity: "0", transform: "translateY(30px)" },
+                to: { opacity: "1", transform: "translateY(0)" },
+              },
+              fadeIn: {
+                from: { opacity: "0" },
+                to: { opacity: "1" },
+              },
+              move: {
+                "0%": { top: "70px" },
+                "50%": { top: "-55px" },
+                "100%": { top: "70px" },
+              },
+              "move-down": {
+                "0%": { bottom: "70px" },
+                "50%": { bottom: "-55px" },
+                "100%": { bottom: "70px" },
+              },
+            },
+            spacing: {
+              25: "100px",
+            },
+            boxShadow: {
+              "green-primary": "0 0 0 0.25rem rgba(45, 90, 61, 0.25)",
+              "green-secondary": "10px 12px 20px rgba(74, 124, 89, 0.2)",
+              "green-lift": "0 20px 40px rgba(45, 90, 61, 0.15)",
+            },
+            backgroundImage: {
+              "text-gradient":
+                "linear-gradient(135deg, #2D5A3D 0%, #7CB342 100%)",
+            },
+            transitionDuration: {
+              150: "150ms",
+            },
+            minHeight: {
+              "product-card": "360px",
+              "product-thumb": "190px",
+              "product-title": "55px",
+            },
+            maxHeight: {
+              "product-thumb": "190px",
+            },
+            width: {
+              testimonial: "300px",
+              "testimonial-main": "540px",
+            },
+            maxWidth: {
+              testimonial: "300px",
+              "footer-tagline": "216px",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Tailwind Custom Styles -->
+    <style>
+      /* Button Styles with Tailwind @apply */
+      .btn-green-primary {
+        @apply bg-green-primary text-white px-6 py-3 rounded-full font-semibold duration-150 border-none no-underline inline-flex items-center justify-center;
+        transition: all 0.15s ease-in-out;
+      }
+
+      .btn-green-primary:hover {
+        @apply bg-green-primary text-white;
+        box-shadow: 0 0 0 0.25rem rgba(45, 90, 61, 0.25);
+      }
+
+      .btn-green-secondary {
+        @apply bg-green-light text-green-primary text-base px-6 py-3 rounded-full border-0 font-semibold duration-150 leading-6 no-underline inline-flex items-center justify-center;
+        transition: all 0.15s ease-in-out;
+      }
+
+      .btn-green-secondary:hover {
+        @apply bg-green-light text-green-primary;
+        box-shadow: 10px 12px 20px rgba(74, 124, 89, 0.2);
+      }
+
+      .badge-green {
+        @apply bg-green-light text-green-primary px-6 py-2 rounded-full font-semibold text-sm;
+      }
+
+      .text-gradient {
+        background: linear-gradient(135deg, #2d5a3d 0%, #7cb342 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hover-lift {
+        @apply duration-150;
+        transition: all 0.15s ease-in-out;
+      }
+
+      .hover-lift:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(45, 90, 61, 0.15);
+      }
+
+      .nav-blur {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        background: rgba(255, 255, 255, 0.95);
+        border-bottom: 1px solid rgba(45, 90, 61, 0.08);
+        transition: all 0.15s ease-in-out;
+      }
+
+      .nav-transparent {
+        background: #f1f8e9;
+        border-bottom: 1px solid transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+      }
+
+      .text-hero {
+        @apply text-hero font-bold text-green-dark;
+      }
+
+      .text-section-title {
+        @apply text-section-title font-bold text-green-dark;
+      }
+
+      .text-stats {
+        @apply text-stats font-bold;
+      }
+
+      .hero-label {
+        font-size: 1.125rem;
+        line-height: 27px;
+        font-weight: 500;
+        color: #D2453D;
+      }
+
+      /* Product Card Styles */
+      .product-card-responsive {
+        padding: 0 !important;
+        border-radius: 16px;
+        row-gap: 0;
+        height: 100%;
+        min-height: 360px;
+        position: relative;
+        border: none;
+        background: #fff;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.15s ease-in-out;
+      }
+
+      .product-card-responsive:hover {
+        box-shadow: none;
+        transform: none;
+      }
+
+      .product-card-responsive .thumbnailContainer {
+        width: 100%;
+        height: auto;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .product-card-responsive .thumbnail-product {
+        min-height: 190px;
+        max-height: 190px;
+        width: 100%;
+        border-radius: 16px 16px 0 0;
+        object-fit: cover;
+        transition: all 0.15s ease-in-out;
+      }
+
+      .product-card-responsive .thumbnailContainer .view-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) translateY(20px);
+        width: 40px;
+        height: 40px;
+        background: #2d5a3d;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: all 0.15s ease-in-out;
+        cursor: pointer;
+        z-index: 10;
+      }
+
+      .product-card-responsive:hover .thumbnailContainer .view-button {
+        opacity: 1;
+        transform: translate(-50%, -50%) translateY(0);
+      }
+
+      .product-card-responsive .thumbnailContainer .view-button svg {
+        width: 20px;
+        height: 20px;
+        fill: white;
+        margin-left: 2px;
+      }
+
+      .product-card-responsive .product-detail {
+        padding: 16px 16px 0 16px;
+        margin-bottom: 20px;
+        flex-grow: 1;
+      }
+
+      .product-card-responsive .product-detail .product-name {
+        color: #2d5a3d;
+        position: relative;
+        font-weight: 700 !important;
+        font-size: 18px !important;
+        line-height: 27px;
+        min-height: 55px;
+        margin-bottom: 12px;
+      }
+
+      .product-card-responsive .product-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 4px;
+        padding: 0 16px 16px 16px;
+      }
+
+      .product-card-responsive .product-price-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .product-card-responsive .product-price {
+        font-size: 20px;
+        font-weight: 700;
+        color: #2d5a3d;
+      }
+
+      .product-card-responsive .product-unit {
+        color: #4a7c59;
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      .product-card-responsive .product-footer .organic-badge {
+        background: #e8f5e8;
+        color: #2d5a3d;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      /* Testimonial Section */
+      #testimonial-section-v3 {
+        background-color: #2d5a3d;
+        overflow: hidden;
+        margin: 50px 0 100px;
+        height: auto;
+        padding: 50px 0;
+      }
+
+      @media (min-width: 992px) {
+        #testimonial-section-v3 {
+          height: 600px;
+        }
+      }
+
+      #testimonial-section-v3 .header-title {
+        margin-top: 10px;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 48px !important;
+      }
+
+      #testimonial-section-v3 .subtitle {
+        margin-top: 10px;
+        color: #a9b3a9;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 32px;
+      }
+
+      #testimonial-section-v3 .testimonial-column {
+        position: relative;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        overflow-y: scroll;
+        width: 300px;
+        max-width: 300px;
+      }
+
+      #testimonial-section-v3 .testimonial-column::-webkit-scrollbar {
+        display: none;
+      }
+
+      #testimonial-section-v3 .testimonial-column:first-child {
+        animation: move 15s ease-in infinite;
+        top: 50px;
+        position: relative;
+      }
+
+      #testimonial-section-v3 .testimonial-column:last-child {
+        animation: move-down 15s ease-in infinite;
+        bottom: 50px;
+        margin-left: 30px;
+        position: relative;
+      }
+
+      .testimonial-columns-wrapper {
+        display: flex;
+        gap: 0;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      #testimonial-section-v3 .testimonial-card {
+        width: 300px;
+        background: #fff;
+        border-radius: 16px;
+        padding: 20px;
+      }
+
+      #testimonial-section-v3 .testimonial-card > * {
+        text-align: left !important;
+      }
+
+      #testimonial-section-v3 .testimonial-card:not(:last-child) {
+        margin-bottom: 30px;
+      }
+
+      #testimonial-section-v3 .testimonial-title {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 27px;
+        color: #2d5a3d;
+      }
+
+      #testimonial-section-v3 .testimonial-description {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #2d5a3d;
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+
+      #testimonial-section-v3 .testimonial-profile {
+        width: 36px;
+        height: 36px;
+        margin-right: 10px;
+        border-radius: 50%;
+      }
+
+      #testimonial-section-v3 .testimonial-author {
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 18px;
+        color: #2d5a3d;
+      }
+
+      #testimonial-section-v3 .testimonial-role {
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 18px;
+        color: #4a7c59;
+      }
+
+      @keyframes move {
+        0% {
+          top: 70px;
+        }
+        50% {
+          top: -55px;
+        }
+        to {
+          top: 70px;
+        }
+      }
+
+      @keyframes move-down {
+        0% {
+          bottom: 70px;
+        }
+        50% {
+          bottom: -55px;
+        }
+        to {
+          bottom: 70px;
+        }
+      }
+
+      @media screen and (max-width: 576px) {
+        #testimonial-section-v3 {
+          padding-block: 30px !important;
+          margin-bottom: 0 !important;
+        }
+        #testimonial-section-v3 .header-title {
+          font-size: 24px !important;
+          margin-top: 4px !important;
+        }
+        #testimonial-section-v3 .hero-label {
+          font-size: 14px !important;
+        }
+      }
+
+      /* Footer */
+      .footer-nd {
+        @apply relative z-10 bg-green-light mt-25 pt-20;
+      }
+
+      .footer-nd .container {
+        @apply max-w-6xl;
+      }
+
+      .footer-nd p,
+      .footer-nd p a {
+        @apply text-green-dark;
+      }
+
+      .footer-nd p a:hover {
+        @apply text-green-primary;
+      }
+
+      .footer-nd .tagline {
+        @apply leading-5 text-base max-w-footer-tagline;
+      }
+
+      .footer-nd .item-footer {
+        @apply mb-12;
+      }
+
+      .footer-nd .item-footer .header-category {
+        @apply font-bold text-base mb-2;
+      }
+
+      .footer-nd .item-footer .text {
+        @apply m-0;
+      }
+
+      .footer-nd .item-footer ul {
+        margin-left: -32px;
+        padding-left: 32px;
+      }
+
+      .footer-nd .item-footer ul li {
+        @apply pb-2 list-none;
+      }
+
+      .footer-nd .item-footer ul li a {
+        @apply no-underline text-green-dark text-base;
+      }
+
+      .footer-nd .item-footer ul li a:hover {
+        @apply text-green-primary;
+      }
+
+      .footer-nd .container {
+        @apply px-10;
+      }
+
+      @media (max-width: 767px) {
+        .footer-nd {
+          @apply mt-0;
+        }
+        .footer-nd .item-footer {
+          @apply mb-8;
+        }
+      }
+
+      @media screen and (max-width: 576px) {
+        #testimonial-section-v3 {
+          padding-block: 30px !important;
+          margin-bottom: 0 !important;
+        }
+        #testimonial-section-v3 .header-title {
+          font-size: 24px !important;
+          margin-top: 4px !important;
+        }
+        #testimonial-section-v3 .hero-label {
+          font-size: 14px !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="font-poppins bg-green-light">
+    <!-- Promotional Banner -->
+    <div class="bg-green-dark text-white py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap items-center justify-between">
+          <div class="flex items-center space-x-6">
+            <div class="flex items-center space-x-3">
+              <svg
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span class="text-sm font-medium">Sertifikasi Organik Resmi</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <svg
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"
+                />
+              </svg>
+              <span class="text-sm font-medium"
+                >Gratis Ongkir untuk Pembelian >100rb</span
+              >
+              <span class="badge-green font-bold ml-2">FRESH2024</span>
+            </div>
+          </div>
+          <div class="text-sm">
+            <span>Pesan via WhatsApp: </span>
+            <a
+              href="https://wa.me/628123456789"
+              class="btn-green-primary text-white px-4 py-2 rounded-full font-semibold text-sm transition-colors"
+            >
+              +62 812-3456-789
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-transparent sticky top-0 z-50 py-4" id="navbar">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex items-center space-x-4">
+            <div class="flex items-center space-x-3">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <circle cx="20" cy="20" r="20" fill="#2D5A3D" />
+                <path d="M12 28L20 16L28 28H12Z" fill="#7CB342" />
+                <circle cx="20" cy="14" r="2" fill="#81C784" />
+              </svg>
+              <div>
+                <h1 class="text-2xl font-bold text-green-dark">
+                  GreenLeaf Organics
+                </h1>
+                <p class="text-sm text-green-secondary">
+                  Fresh • Organic • Sustainable
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden lg:flex items-center space-x-8">
+            <a
+              href="#home"
+              class="font-medium transition-colors text-green-dark hover:text-green-primary"
+            >
+              Beranda
+            </a>
+            <a
+              href="#products"
+              class="font-medium transition-colors text-green-dark hover:text-green-primary"
+            >
+              Produk
+            </a>
+
+            <!-- Products Dropdown -->
+            <div class="relative group">
+              <button
+                class="font-medium transition-colors flex items-center text-green-dark hover:text-green-primary"
+              >
+                Kategori
+                <svg
+                  class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+
+              <!-- Dropdown Menu -->
+              <div
+                class="absolute top-full left-0 mt-3 w-80 bg-white rounded-2xl shadow-2xl border-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-4 group-hover:translate-y-0"
+              >
+                <div class="p-6">
+                  <div class="grid grid-cols-2 gap-6">
+                    <div>
+                      <h6 class="font-semibold mb-3 text-green-dark">
+                        Sayuran
+                      </h6>
+                      <div class="space-y-2">
+                        <a
+                          href="#"
+                          class="block text-gray-600 hover:text-green-primary text-sm transition-colors"
+                          >Selada & Kangkung</a
+                        >
+                        <a
+                          href="#"
+                          class="block text-gray-600 hover:text-green-primary text-sm transition-colors"
+                          >Tomat & Cabai</a
+                        >
+                        <a
+                          href="#"
+                          class="block text-gray-600 hover:text-green-primary text-sm transition-colors"
+                          >Wortel & Bit</a
+                        >
+                      </div>
+                    </div>
+                    <div>
+                      <h6 class="font-semibold mb-3 text-green-dark">
+                        Buah & Herbal
+                      </h6>
+                      <div class="space-y-2">
+                        <a
+                          href="#"
+                          class="block text-gray-600 hover:text-green-primary text-sm transition-colors"
+                          >Stroberi Organik</a
+                        >
+                        <a
+                          href="#"
+                          class="block text-gray-600 hover:text-green-primary text-sm transition-colors"
+                          >Basil & Mint</a
+                        >
+                        <a
+                          href="#"
+                          class="block text-gray-600 hover:text-green-primary text-sm transition-colors"
+                          >Rosemary</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a
+              href="#about"
+              class="font-medium transition-colors text-green-dark hover:text-green-primary"
+            >
+              Tentang
+            </a>
+            <a
+              href="#sustainability"
+              class="font-medium transition-colors text-green-dark hover:text-green-primary"
+            >
+              Keberlanjutan
+            </a>
+            <a
+              href="#contact"
+              class="font-medium transition-colors text-green-dark hover:text-green-primary"
+            >
+              Kontak
+            </a>
+          </div>
+
+          <!-- CTA Button -->
+          <div class="hidden lg:flex items-center space-x-4">
+            <button class="btn-green-secondary p-3 rounded-full">
+              <svg
+                width="20"
+                height="20"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M3 3a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H3z"
+                />
+                <circle cx="6" cy="17" r="1" />
+                <circle cx="16" cy="17" r="1" />
+              </svg>
+            </button>
+            <div class="text-right">
+              <a href="#" class="btn-green-primary w-full text-center"
+                >Beli Sekarang</a
+              >
+            </div>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button class="lg:hidden p-2" id="mobile-menu-button">
+            <svg
+              class="w-6 h-6 text-green-dark"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="lg:hidden hidden mt-4" id="mobile-menu">
+          <div class="space-y-2 py-4 border-t">
+            <a
+              href="#products"
+              class="block py-2 transition-colors text-green-dark hover:text-green-primary"
+              >Produk</a
+            >
+            <a
+              href="#about"
+              class="block py-2 transition-colors text-green-dark hover:text-green-primary"
+              >Tentang</a
+            >
+            <a
+              href="#sustainability"
+              class="block py-2 transition-colors text-green-dark hover:text-green-primary"
+              >Keberlanjutan</a
+            >
+            <a
+              href="#contact"
+              class="block py-2 transition-colors text-green-dark hover:text-green-primary"
+              >Kontak</a
+            >
+            <div class="pt-4 border-t mt-4 space-y-2">
+              <a href="#" class="block py-2 text-gray-700">Keranjang</a>
+              <a href="#" class="btn-green-primary w-full text-center"
+                >Beli Sekarang</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-20 bg-green-light">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+          <!-- Left Content -->
+          <div class="lg:w-1/2">
+            <p class="hero-label mb-6">Segar dari Kebun Organik</p>
+            <h1
+              class="text-5xl font-bold leading-tight text-green-dark mb-6 animate-fade-in-up"
+            >
+              Produk Organik
+              <span class="text-gradient">Berkualitas</span>
+              untuk Hidup Sehat
+            </h1>
+            <h2
+              class="text-3xl font-bold leading-relaxed text-green-dark mb-4 animate-fade-in-up"
+              style="animation-delay: 0.2s"
+            >
+              Langsung dari Kebun Hidroponik
+            </h2>
+
+            <!-- Subheading -->
+            <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+              Bergabunglah dengan ribuan keluarga yang telah memilih produk
+              organik segar dari GreenLeaf Organics Indonesia.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 mb-8">
+              <a href="#products" class="btn-green-primary text-lg">
+                Lihat Produk
+              </a>
+              <a href="#sustainability" class="btn-green-secondary text-lg">
+                Cerita Kami
+              </a>
+            </div>
+
+            <!-- Stats -->
+            <div class="flex items-center gap-8">
+              <div class="text-center">
+                <div class="text-stats text-green-dark">500+</div>
+                <p class="text-sm text-gray-600 mt-1">Produk Terjual/Bulan</p>
+              </div>
+              <div class="text-center">
+                <div class="text-stats text-green-dark">100%</div>
+                <p class="text-sm text-gray-600 mt-1">Organik Bersertifikat</p>
+              </div>
+              <div class="text-center">
+                <div class="text-stats text-green-dark">24jam</div>
+                <p class="text-sm text-gray-600 mt-1">Freshness Guarantee</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Content -->
+          <div class="lg:w-1/2 relative">
+            <img
+              src="https://images.unsplash.com/photo-1560493676-04071c5f467b?w=600&h=400&fit=crop&crop=center"
+              alt="Kebun Hidroponik Organik"
+              class="w-full rounded-2xl shadow-2xl hover-lift"
+            />
+            <div
+              class="absolute -top-6 -right-6 bg-white p-4 rounded-xl shadow-lg"
+            >
+              <div class="text-2xl font-bold text-green-primary">4.9/5</div>
+              <div class="text-sm text-gray-600">Customer Rating</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <p class="hero-label mb-4">Produk Unggulan Kami</p>
+          <h2 class="text-section-title font-bold text-green-dark mb-4">
+            Sayuran & Buah Organik Segar
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Dipanen segar setiap hari dari kebun hidroponik ramah lingkungan
+          </p>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+          <!-- Product 1 -->
+          <div class="product-card-responsive bg-white animate-fade-in-up">
+            <div class="thumbnailContainer">
+              <img
+                src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                alt="Selada Organik"
+                class="thumbnail-product"
+              />
+              <div class="view-button">
+                <svg
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                  <path
+                    fill-rule="evenodd"
+                    d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="product-detail">
+              <h3 class="product-name">Selada Organik Premium</h3>
+              <p class="text-gray-600 text-sm mb-4">
+                Selada segar dari kebun hidroponik, bebas pestisida dan kaya
+                nutrisi
+              </p>
+            </div>
+            <div class="product-footer">
+              <div class="product-price-wrapper">
+                <span class="product-price">Rp15.000</span>
+                <span class="product-unit">/pack</span>
+              </div>
+              <span class="organic-badge">Organik</span>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="product-card-responsive bg-white animate-fade-in-up">
+            <div class="thumbnailContainer">
+              <img
+                src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                alt="Tomat Organik"
+                class="thumbnail-product"
+              />
+              <div class="view-button">
+                <svg
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                  <path
+                    fill-rule="evenodd"
+                    d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="product-detail">
+              <h3 class="product-name">Tomat Cherry Organik</h3>
+              <p class="text-gray-600 text-sm mb-4">
+                Tomat cherry manis, bebas bahan kimia dengan kandungan vitamin C
+                tinggi
+              </p>
+            </div>
+            <div class="product-footer">
+              <div class="product-price-wrapper">
+                <span class="product-price">Rp25.000</span>
+                <span class="product-unit">/500g</span>
+              </div>
+              <span class="organic-badge">Organik</span>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="product-card-responsive bg-white animate-fade-in-up">
+            <div class="thumbnailContainer">
+              <img
+                src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                alt="Kangkung Organik"
+                class="thumbnail-product"
+              />
+              <div class="view-button">
+                <svg
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                  <path
+                    fill-rule="evenodd"
+                    d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="product-detail">
+              <h3 class="product-name">Kangkung Air Organik</h3>
+              <p class="text-gray-600 text-sm mb-4">
+                Kangkung air segar, cocok untuk berbagai masakan tradisional
+                Indonesia
+              </p>
+            </div>
+            <div class="product-footer">
+              <div class="product-price-wrapper">
+                <span class="product-price">Rp12.000</span>
+                <span class="product-unit">/ikat</span>
+              </div>
+              <span class="organic-badge">Organik</span>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="product-card-responsive bg-white animate-fade-in-up">
+            <div class="thumbnailContainer">
+              <img
+                src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop&crop=center"
+                alt="Stroberi Organik"
+                class="thumbnail-product"
+              />
+              <div class="view-button">
+                <svg
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                  <path
+                    fill-rule="evenodd"
+                    d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="product-detail">
+              <h3 class="product-name">Stroberi Organik Premium</h3>
+              <p class="text-gray-600 text-sm mb-4">
+                Stroberi manis dan segar, kaya antioksidan dan vitamin
+              </p>
+            </div>
+            <div class="product-footer">
+              <div class="product-price-wrapper">
+                <span class="product-price">Rp45.000</span>
+                <span class="product-unit">/250g</span>
+              </div>
+              <span class="organic-badge">Premium</span>
+            </div>
+          </div>
+
+          <!-- Product 5 -->
+          <div class="product-card-responsive bg-white animate-fade-in-up">
+            <div class="thumbnailContainer">
+              <img
+                src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=300&fit=crop&crop=center"
+                alt="Basil Organik"
+                class="thumbnail-product"
+              />
+              <div class="view-button">
+                <svg
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                  <path
+                    fill-rule="evenodd"
+                    d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="product-detail">
+              <h3 class="product-name">Basil Organik</h3>
+              <p class="text-gray-600 text-sm mb-4">
+                Daun basil aromatik untuk masakan Italia dan aromaterapi
+              </p>
+            </div>
+            <div class="product-footer">
+              <div class="product-price-wrapper">
+                <span class="product-price">Rp18.000</span>
+                <span class="product-unit">/pot</span>
+              </div>
+              <span class="organic-badge">Herbal</span>
+            </div>
+          </div>
+
+          <!-- Product 6 -->
+          <div class="product-card-responsive bg-white animate-fade-in-up">
+            <div class="thumbnailContainer">
+              <img
+                src="https://images.unsplash.com/photo-1582515073490-39981397c445?w=400&h=300&fit=crop&crop=center"
+                alt="Wortel Organik"
+                class="thumbnail-product"
+              />
+              <div class="view-button">
+                <svg
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                  <path
+                    fill-rule="evenodd"
+                    d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="product-detail">
+              <h3 class="product-name">Wortel Baby Organik</h3>
+              <p class="text-gray-600 text-sm mb-4">
+                Wortel baby manis, kaya beta karoten dan cocok untuk camilan
+                sehat
+              </p>
+            </div>
+            <div class="product-footer">
+              <div class="product-price-wrapper">
+                <span class="product-price">Rp20.000</span>
+                <span class="product-unit">/500g</span>
+              </div>
+              <span class="organic-badge">Organik</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-20 bg-green-light">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-section-title font-bold text-green-dark mb-4">
+            Dipercaya Keluarga Indonesia
+          </h2>
+        </div>
+
+        <!-- Desktop Stats -->
+        <div class="hidden lg:grid grid-cols-4 gap-8 text-center">
+          <div
+            class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 hover-lift"
+          >
+            <div class="text-stats text-green-dark">500+</div>
+            <h3 class="text-xl font-semibold text-green-dark mt-4 mb-2">
+              Produk Terjual
+            </h3>
+            <p class="text-gray-600">Setiap bulannya</p>
+          </div>
+          <div
+            class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 hover-lift"
+          >
+            <div class="text-stats text-green-dark">100%</div>
+            <h3 class="text-xl font-semibold text-green-dark mt-4 mb-2">
+              Organik Bersertifikat
+            </h3>
+            <p class="text-gray-600">Tanpa pestisida</p>
+          </div>
+          <div
+            class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 hover-lift"
+          >
+            <div class="text-stats text-green-dark">95%</div>
+            <h3 class="text-xl font-semibold text-green-dark mt-4 mb-2">
+              Tingkat Kepuasan
+            </h3>
+            <p class="text-gray-600">Customer rating</p>
+          </div>
+          <div
+            class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 hover-lift"
+          >
+            <div class="text-stats text-green-dark">24h</div>
+            <h3 class="text-xl font-semibold text-green-dark mt-4 mb-2">
+              Garansi Kesegaran
+            </h3>
+            <p class="text-gray-600">Freshness guarantee</p>
+          </div>
+        </div>
+
+        <!-- Mobile Stats -->
+        <div class="lg:hidden space-y-8">
+          <div class="text-center bg-white rounded-2xl p-6 shadow-lg">
+            <div class="text-stats text-green-dark mb-3">500+</div>
+            <p class="text-green-dark font-medium">Produk Terjual per Bulan</p>
+          </div>
+          <div class="text-center bg-white rounded-2xl p-6 shadow-lg">
+            <div class="text-stats text-green-dark mb-3">100%</div>
+            <p class="text-green-dark font-medium">Organik Bersertifikat</p>
+          </div>
+          <div class="text-center bg-white rounded-2xl p-6 shadow-lg">
+            <div class="text-stats text-green-dark mb-3">95%</div>
+            <p class="text-green-dark font-medium">Tingkat Kepuasan</p>
+          </div>
+          <div class="text-center bg-white rounded-2xl p-6 shadow-lg">
+            <div class="text-stats text-green-dark mb-3">24h</div>
+            <p class="text-green-dark font-medium">Garansi Kesegaran</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+          <!-- Left Image -->
+          <div class="lg:w-1/2 relative">
+            <img
+              src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&h=400&fit=crop&crop=center"
+              alt="Kebun Hidroponik GreenLeaf"
+              class="rounded-2xl shadow-2xl w-full hover-lift"
+            />
+            <div
+              class="absolute -top-6 -right-6 bg-white p-4 rounded-xl shadow-lg"
+            >
+              <div class="text-2xl font-bold text-green-primary">4.9/5</div>
+              <div class="text-sm text-gray-600">Customer Rating</div>
+            </div>
+          </div>
+
+          <!-- Right Content -->
+          <div class="lg:w-1/2">
+            <p class="hero-label mb-6">Tentang GreenLeaf Organics</p>
+            <h2 class="text-4xl font-bold text-green-dark mb-6">
+              Pertanian Modern untuk
+              <span class="text-gradient">Masa Depan</span>
+            </h2>
+            <p class="text-lg text-gray-600 mb-6">
+              GreenLeaf Organics adalah startup pertanian yang berkomitmen untuk
+              menyediakan produk organik berkualitas tinggi dengan metode
+              hidroponik ramah lingkungan.
+            </p>
+            <div class="space-y-4 mb-8">
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-6 h-6 bg-green-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1"
+                >
+                  <svg
+                    class="w-3 h-3 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-green-dark mb-1">
+                    Sistem Hidroponik Modern
+                  </h4>
+                  <p class="text-gray-600">
+                    Teknologi hidroponik terdepan untuk menghasilkan produk
+                    berkualitas tinggi sepanjang tahun
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-6 h-6 bg-green-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1"
+                >
+                  <svg
+                    class="w-3 h-3 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-green-dark mb-1">
+                    Sertifikasi Organik Resmi
+                  </h4>
+                  <p class="text-gray-600">
+                    Semua produk bersertifikat organik dan bebas dari pestisida
+                    berbahaya
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-6 h-6 bg-green-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1"
+                >
+                  <svg
+                    class="w-3 h-3 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-green-dark mb-1">
+                    Ramah Lingkungan
+                  </h4>
+                  <p class="text-gray-600">
+                    Menggunakan 90% lebih sedikit air dan tanah dibandingkan
+                    pertanian konvensional
+                  </p>
+                </div>
+              </div>
+            </div>
+            <a href="#sustainability" class="btn-green-primary"
+              >Pelajari Lebih Lanjut</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section (testimonial-section-v3) -->
+    <section id="testimonial-section-v3">
+      <div class="container mx-auto px-4">
+        <div class="hidden lg:flex items-center justify-between h-full">
+          <div class="w-[540px] flex-shrink-0">
+            <div class="hero-label">Testimoni Pelanggan Setia</div>
+            <h2 class="header-title text-white">
+              Kata Mereka Tentang GreenLeaf Organics
+            </h2>
+            <p class="subtitle">
+              Cerita nyata dari keluarga yang telah merasakan manfaat produk
+              organik segar kami
+            </p>
+            <a
+              href="#products"
+              class="bg-white text-green-primary px-6 py-3 rounded-full font-semibold transition-all duration-150 border-none no-underline inline-flex items-center justify-center hover:shadow-[0_0_0_0.25rem_rgba(255,255,255,0.25)] mt-8"
+            >
+              Lihat Produk
+            </a>
+          </div>
+
+          <div
+            class="flex"
+            style="
+              flex: 1;
+              justify-content: flex-end;
+              align-items: center;
+              position: relative;
+            "
+          >
+            <div class="testimonial-columns-wrapper">
+              <div class="testimonial-column">
+                <div class="testimonial-card">
+                  <div class="testimonial-title">
+                    Sayuran segar dan berkualitas!
+                  </div>
+                  <p class="testimonial-description">
+                    Selada dan tomat dari GreenLeaf selalu segar dan tahan lama.
+                    Anak-anak jadi suka makan sayuran karena rasanya enak dan
+                    manis.
+                  </p>
+                  <div class="flex items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&h=50&crop=face"
+                      alt="Ibu Sarah"
+                      class="testimonial-profile"
+                    />
+                    <div>
+                      <div class="testimonial-author">Ibu Sarah</div>
+                      <div class="testimonial-role">
+                        Ibu Rumah Tangga, Jakarta
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="testimonial-card">
+                  <div class="testimonial-title">
+                    Kualitas organik terpercaya
+                  </div>
+                  <p class="testimonial-description">
+                    Sebagai chef, saya butuh bahan-bahan berkualitas tinggi.
+                    GreenLeaf organics selalu memberikan produk terbaik untuk
+                    restoran saya.
+                  </p>
+                  <div class="flex items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face"
+                      alt="Chef Budi"
+                      class="testimonial-profile"
+                    />
+                    <div>
+                      <div class="testimonial-author">Chef Budi</div>
+                      <div class="testimonial-role">Executive Chef</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="testimonial-card">
+                  <div class="testimonial-title">
+                    Delivery cepat dan kemasan aman
+                  </div>
+                  <p class="testimonial-description">
+                    Pesan pagi, sore sudah sampai. Kemasannya rapi dan sayuran
+                    masih segar seperti baru dipetik dari kebun.
+                  </p>
+                  <div class="flex items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&h=50&fit=crop&crop=face"
+                      alt="Pak Agus"
+                      class="testimonial-profile"
+                    />
+                    <div>
+                      <div class="testimonial-author">Pak Agus</div>
+                      <div class="testimonial-role">
+                        Karyawan Swasta, Bandung
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="testimonial-column">
+                <div class="testimonial-card">
+                  <div class="testimonial-title">Stroberi termanis!</div>
+                  <p class="testimonial-description">
+                    Stroberi GreenLeaf paling manis yang pernah saya coba.
+                    Anak-anak sampai minta beli lagi setiap minggu.
+                  </p>
+                  <div class="flex items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=50&h=50&fit=crop&crop=face"
+                      alt="Ibu Maya"
+                      class="testimonial-profile"
+                    />
+                    <div>
+                      <div class="testimonial-author">Ibu Maya</div>
+                      <div class="testimonial-role">Dokter, Surabaya</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="testimonial-card">
+                  <div class="testimonial-title">Harga sebanding kualitas</div>
+                  <p class="testimonial-description">
+                    Meski harganya sedikit lebih mahal, tapi kualitas organiknya
+                    benar-benar terasa. Investasi terbaik untuk kesehatan
+                    keluarga.
+                  </p>
+                  <div class="flex items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=50&h=50&fit=crop&crop=face"
+                      alt="Pak Rudi"
+                      class="testimonial-profile"
+                    />
+                    <div>
+                      <div class="testimonial-author">Pak Rudi</div>
+                      <div class="testimonial-role">Pengusaha, Yogyakarta</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile version -->
+        <div class="lg:hidden text-center" class="mt-8">
+          <h2 class="header-title text-white">
+            Kata Mereka Tentang GreenLeaf Organics
+          </h2>
+          <p class="subtitle">
+            Cerita nyata dari keluarga yang telah merasakan manfaat produk
+            organik kami
+          </p>
+          <div class="space-y-6 mt-8">
+            <div class="testimonial-card">
+              <div class="testimonial-title">
+                Sayuran segar dan berkualitas!
+              </div>
+              <p class="testimonial-description">
+                Selada dan tomat dari GreenLeaf selalu segar dan tahan lama.
+              </p>
+              <div class="flex items-center justify-center">
+                <img
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&h=50&crop=face"
+                  alt="Ibu Sarah"
+                  class="testimonial-profile"
+                />
+                <div class="text-left">
+                  <div class="testimonial-author">Ibu Sarah</div>
+                  <div class="testimonial-role">Ibu Rumah Tangga</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer-nd">
+      <div class="container mx-auto px-4 lg:px-12">
+        <div class="flex flex-wrap">
+          <div class="item-footer w-full lg:w-1/4 lg:pr-8">
+            <div class="text-2xl font-bold mb-4 text-green-dark">
+              GreenLeaf Organics
+            </div>
+            <p class="tagline mb-2">PT. GreenLeaf Organics Indonesia</p>
+            <p class="tagline mb-2">Jl. Pertanian Organik No. 123</p>
+            <p class="tagline mb-2">Jakarta Selatan 12345</p>
+            <p class="tagline">
+              Membawa kesegaran langsung dari kebun ke meja makan Anda
+            </p>
+          </div>
+          <div class="item-footer w-full lg:w-1/4">
+            <div class="header-category text-green-dark">Produk</div>
+            <ul>
+              <li><a href="#">Sayuran Organik</a></li>
+              <li><a href="#">Buah Segar</a></li>
+              <li><a href="#">Herbal Aromatik</a></li>
+              <li><a href="#">Paket Keluarga</a></li>
+            </ul>
+          </div>
+          <div class="item-footer w-full lg:w-1/4">
+            <div class="header-category text-green-dark">Layanan</div>
+            <ul>
+              <li><a href="#">Delivery Harian</a></li>
+              <li><a href="#">Subscription Box</a></li>
+              <li><a href="#">Wholesale</a></li>
+              <li><a href="#">Konsultasi Nutrisi</a></li>
+            </ul>
+          </div>
+          <div class="item-footer w-full lg:w-1/4">
+            <div class="header-category text-green-dark">Kontak</div>
+            <ul>
+              <li><a href="tel:+628123456789">+62 812-3456-789</a></li>
+              <li>
+                <a href="mailto:info@greenleaf-organics.id"
+                  >info@greenleaf-organics.id</a
+                >
+              </li>
+              <li><a href="#">WhatsApp Business</a></li>
+              <li><a href="#">Live Chat</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Mobile Menu Toggle
+      document
+        .getElementById("mobile-menu-button")
+        .addEventListener("click", function () {
+          const mobileMenu = document.getElementById("mobile-menu");
+          mobileMenu.classList.toggle("hidden");
+        });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-slide-up");
+          }
+        });
+      }, observerOptions);
+
+      // Observe elements for animation
+      document.querySelectorAll(".hover-lift").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Mobile Menu Toggle
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton?.addEventListener("click", function () {
+        if (mobileMenu) {
+          mobileMenu.classList.toggle("hidden");
+        }
+      });
+
+      // Navbar Scroll Effect
+      const navbar = document.getElementById("navbar");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.remove("nav-transparent");
+          navbar.classList.add("nav-blur");
+        } else {
+          navbar.classList.remove("nav-blur");
+          navbar.classList.add("nav-transparent");
+        }
+      });
+    </script>
+  </body>
+</html>
